@@ -1,17 +1,15 @@
-"""
-homework5.py
-"""
+"""homework5.py"""
 
 # Заменить символ “#” на символ “/” в строке 'www.my_site.com#about'
 SITE = "www.my_site.com#about"
 print(SITE.replace("#", "/"))
 
 # Напишите программу, которая добавляет ‘ing’ к словам
-WORD_LIST = ["run", "go", "lie"]
-for word in WORD_LIST:
+word_list = ["run", "go", "lie"]
+for word in word_list:
     "{word}ing"
-WORD_LIST_ING = " ".join(f"{word}ing" for word in WORD_LIST)
-print(WORD_LIST_ING)
+word_list_ing = " ".join(f"{word}ing" for word in word_list)
+print(word_list_ing)
 
 # В строке “Ivanou Ivan” поменяйте местами слова => "Ivan Ivanou"
 LOGIN = "Ivanou Ivan"
