@@ -1,21 +1,21 @@
-txt = "www.my_site.com#about"
-print(txt.replace("#", "/"))
+string = "www.my_site.com#about"
+print(string.replace("#", "/"))
 
-a = ["run", "go", "lie"]
+a: list = ["run", "go", "lie"]
 for word in a:
     "{word}ing"
 b = " ".join(f"{word}ing" for word in a)
 print(b)
 
-b = "Ivanou Ivan"
-spaceIndex = b.find(" ")
-word1 = b[:spaceIndex + 1]
-word2 = b[spaceIndex + 1:]
+string = "Ivanou Ivan"
+spaceIndex = string.find(" ")
+word1 = string[:spaceIndex + 1]
+word2 = string[spaceIndex + 1:]
 print(word2 + " " + word1)
 
-s = " Hello World! "
-s = s.strip()
+string = " Hello World! "
+s = string.strip()
 print(s)
 
-a = "pARiS"
-print(a.capitalize())
+txt = "pARiS"
+print(txt.capitalize())
