@@ -1,4 +1,6 @@
-"""homework5.py"""
+"""
+homework5.py
+"""
 
 # Заменить символ “#” на символ “/” в строке 'www.my_site.com#about'
 SITE = "www.my_site.com#about"
