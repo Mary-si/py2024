@@ -21,6 +21,6 @@ txt = " Hello World! "
 s = txt.strip()
 print(s)
 
-# Исправьте данное имя собственное так, чтобы оно соответствовало этому утверждению. "pARiS" >> "Paris"
+# Исправьте "pARiS" >> "Paris"
 txt = "pARiS"
 print(txt.capitalize())
