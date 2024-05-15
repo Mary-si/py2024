@@ -1,3 +1,5 @@
+"""hi"""
+
 def main():
     print("Hello world!")
 
