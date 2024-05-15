@@ -1,4 +1,3 @@
-
 txt: str = "www.my_site.com#about"
 print(txt.replace("#", "/"))
 
