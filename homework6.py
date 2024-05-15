@@ -26,7 +26,8 @@ print(" ".join(txt))
 # Создайте список из 10 элементов,
 # вставьте на 3-ю позицию новое значение,
 # удалите элемент из списка под индексом 6
-NameList = ["Mary", "Alex", "Jon", "Michail", "Maikl", "Ann", "Valeri", "Natali", "Svetlana", "Andrei"]
+NameList = ["Mary", "Alex", "Jon", "Michail",
+            "Maikl", "Ann", "Valeri", "Natali", "Svetlana", "Andrei"]
 NameList.insert(2, "Gleb")
 NameList.remove("Valeri")
 print(NameList)
