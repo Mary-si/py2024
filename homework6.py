@@ -1,21 +1,22 @@
 """Homework6.py"""
 
 # Перевести строку в список "Robin Singh" => ["Robin”, “Singh"]
-string = "Robin Singh"
-a = string.split(" ")
+STRING = "Robin Singh"
+a = STRING.split(" ")
 print(a)
 
 # "I love arrays they are my favorite" => ["I", "love", "arrays", "they", "are", "my", "favorite"]
-string = "I love arrays they are my favorite"
-a = string.split(" ")
+STRING = "I love arrays they are my favorite"
+a = STRING.split(" ")
 print(a)
 
 # Дан список: [Ivan, Ivanou], и 2 строки: Minsk, Belarus
 # Напечатайте текст: “Привет, Ivan Ivanou! Добро пожаловать в Minsk Belarus”
 name = ["Ivan", "Ivanou"]
-city = "Minsk"
-country = "Belarus"
-print("Привет," + " " + " ".join(name) + "!" + " " "Добро пожаловать в" + " " + city + " " + country + ".")
+CITY = "Minsk"
+COUNTRY = "Belarus"
+print("Привет," + " " + " ".join(name) +
+      "!" + " " "Добро пожаловать в" + " " + CITY + " " + COUNTRY + ".")
 
 # Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"] сделайте из него строку
 # => "I love arrays they are my favorite"
