@@ -4,7 +4,8 @@ print(SITE.replace("#", "/"))
 
 # Напишите программу, которая добавляет ‘ing’ к словам
 WORDS = ["run", "go", "lie"]
-for word in WORDS: "{word}ing"
+for word in WORDS:
+    "{word}ing"
 WORD_ING = " ".join(f"{word}ing" for word in WORDS)
 print(WORD_ING)
 
@@ -17,8 +18,8 @@ print(FIRST_NAME + " " + SURNAME)
 
 # Напишите программу которая удаляет пробел в начале, в конце строки
 HELLO = " Hello World! "
-s = HELLO.strip()
-print(s)
+HELLO_1 = HELLO.strip()
+print(HELLO_1)
 
 # Исправьте "pARiS" >> "Paris"
 CITY = "pARiS"
