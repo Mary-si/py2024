@@ -1,4 +1,4 @@
-""" Заменить символ “#” на символ “/” в строке 'www.my_site.com#about' """
+# """ Заменить символ “#” на символ “/” в строке 'www.my_site.com#about' """
 SITE = "www.my_site.com#about"
 print(SITE.replace("#", "/"))
 
@@ -6,6 +6,7 @@ print(SITE.replace("#", "/"))
 WORDS = ["run", "go", "lie"]
 for word in WORDS:
     "{word}ing"
+
 WORD_ING = " ".join(f"{word}ing" for word in WORDS)
 print(WORD_ING)
 
