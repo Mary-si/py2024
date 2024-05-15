@@ -1,22 +1,22 @@
 # """Homework 5"""
 
-string = "www.my_site.com#about"
-print(string.replace("#", "/"))
+site = "www.my_site.com#about"
+print(site.replace("#", "/"))
 
-a = ["run", "go", "lie"]
-for word in a:
+word_list = ["run", "go", "lie"]
+for word in word_list:
     "{word}ing"
-b = " ".join(f"{word}ing" for word in a)
-print(b)
+word_ing = " ".join(f"{word}ing" for word in word_list)
+print(word_ing)
 
 string = "Ivanou Ivan"
 spaceIndex = string.find(" ")
-word1 = string[:spaceIndex + 1]
-word2 = string[spaceIndex + 1:]
-print(word2 + " " + word1)
+last_name = string[:spaceIndex + 1]
+first_name = string[spaceIndex + 1:]
+print(first_name + " " + last_name)
 
-string = " Hello World! "
-s = string.strip()
+txt = " Hello World! "
+s = txt.strip()
 print(s)
 
 txt = "pARiS"
