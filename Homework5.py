@@ -1,4 +1,4 @@
-txt: str = "www.my_site.com#about"
+txt = "www.my_site.com#about"
 print(txt.replace("#", "/"))
 
 a = ["run", "go", "lie"]
