@@ -6,8 +6,6 @@ print(SITE.replace("#", "/"))
 
 # Напишите программу, которая добавляет ‘ing’ к словам
 word_list = ["run", "go", "lie"]
-for word in word_list:
-    "{word}ing"
 word_list_ing = " ".join(f"{word}ing" for word in word_list)
 print(word_list_ing)
 
