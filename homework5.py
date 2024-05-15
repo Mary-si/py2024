@@ -5,9 +5,9 @@ SITE = "www.my_site.com#about"
 print(SITE.replace("#", "/"))
 
 # Напишите программу, которая добавляет ‘ing’ к словам
-word_list = ["run", "go", "lie"]
-word_list_ing = " ".join(f"{word}ing" for word in word_list)
-print(word_list_ing)
+WORLD_LIST = ["run", "go", "lie"]
+WORLD_LIST_ING = " ".join(f"{word}ing" for word in WORLD_LIST)
+print(WORLD_LIST_ING)
 
 # В строке “Ivanou Ivan” поменяйте местами слова => "Ivan Ivanou"
 LOGIN = "Ivanou Ivan"
