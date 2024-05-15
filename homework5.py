@@ -4,17 +4,16 @@ print(SITE.replace("#", "/"))
 
 # Напишите программу, которая добавляет ‘ing’ к словам
 WORDS = ["run", "go", "lie"]
-for word in WORDS:
-    "{word}ing"
-word_ing = " ".join(f"{word}ing" for word in WORDS)
-print(word_ing)
+for word in WORDS: "{word}ing"
+WORD_ING = " ".join(f"{word}ing" for word in WORDS)
+print(WORD_ING)
 
 # В строке “Ivanou Ivan” поменяйте местами слова => "Ivan Ivanou"
 LOGIN = "Ivanou Ivan"
-spaceIndex = LOGIN.find(" ")
-surname = LOGIN[:spaceIndex + 1]
-first_name = LOGIN[spaceIndex + 1:]
-print(first_name + " " + surname)
+SPACEINDEX = LOGIN.find(" ")
+SURNAME = LOGIN[:SPACEINDEX + 1]
+FIRST_NAME = LOGIN[SPACEINDEX + 1:]
+print(FIRST_NAME + " " + SURNAME)
 
 # Напишите программу которая удаляет пробел в начале, в конце строки
 HELLO = " Hello World! "
