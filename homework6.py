@@ -5,7 +5,8 @@ STRING = "Robin Singh"
 a = STRING.split(" ")
 print(a)
 
-# "I love arrays they are my favorite" => ["I", "love", "arrays", "they", "are", "my", "favorite"]
+# "I love arrays they are my favorite" =>
+# ["I", "love", "arrays", "they", "are", "my", "favorite"]
 STRING = "I love arrays they are my favorite"
 a = STRING.split(" ")
 print(a)
@@ -18,8 +19,8 @@ COUNTRY = "Belarus"
 print("Привет," + " " + " ".join(name) +
       "!" + " " "Добро пожаловать в" + " " + CITY + " " + COUNTRY + ".")
 
-# Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"] сделайте из него строку
-# => "I love arrays they are my favorite"
+# Дан список ["I", "love", "arrays", "they", "are", "my", "favorite"]
+# сделайте из него строку => "I love arrays they are my favorite"
 txt = ["I", "love", "arrays", "they", "are", "my", "favorite"]
 print(" ".join(txt))
 
