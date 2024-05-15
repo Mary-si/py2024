@@ -1,3 +1,7 @@
+"""homework"""
+
+# homework
+
 def main():
     print("Hello world!")
 
