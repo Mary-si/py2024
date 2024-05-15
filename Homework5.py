@@ -3,17 +3,17 @@
 site = "www.my_site.com#about"
 print(site.replace("#", "/"))
 
-word_list = ["run", "go", "lie"]
-for word in word_list:
+words = ["run", "go", "lie"]
+for word in words:
     "{word}ing"
-word_ing = " ".join(f"{word}ing" for word in word_list)
+word_ing = " ".join(f"{word}ing" for word in words)
 print(word_ing)
 
-string = "Ivanou Ivan"
-spaceIndex = string.find(" ")
-last_name = string[:spaceIndex + 1]
-first_name = string[spaceIndex + 1:]
-print(first_name + " " + last_name)
+login: str = "Ivanou Ivan"
+spaceIndex = login.find(" ")
+surname = login[:spaceIndex + 1]
+first_name = login[spaceIndex + 1:]
+print(first_name + " " + surname)
 
 txt = " Hello World! "
 s = txt.strip()
