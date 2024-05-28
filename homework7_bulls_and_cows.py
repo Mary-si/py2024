@@ -111,5 +111,5 @@ while True:
         print("Победил компьютер!")
         print("Компьютер загадал число: ", enemy)
         break
-    elif:
+    else:
         answers = del_bad_answers(answers, enemy_try, bulls, cows)
