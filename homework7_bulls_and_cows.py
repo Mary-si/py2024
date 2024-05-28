@@ -41,14 +41,11 @@ def get_all_answers():
             ans.append(list(map(int, tmp)))
     return ans
 
-
-
 def get_one_answer(ans):
     """выбрать один ответ из списка возможны"""
     # выбрать число случайным образом
     num = random.choice(ans)
     return num
-
 
 def input_number():
     """запросить ввести 4 неповторяющиеся цифры"""
@@ -64,32 +61,27 @@ def input_number():
             break
     return nums
 
-
 def check(nums, true_nums):
     """сравнить два числа и сообщить кол-во быков и коров"""
-    bulls, cows = 0, 0
+    BULLS, COWS = 0, 0
     for i, num in enumerate(nums):
         if num in true_nums:
             # проверяем позицию цифры под цифрой на бык или корова
             if nums[i] == true_nums[i]:
-                bulls += 1
+                BULLS += 1
             else:
-                cows += 1
-    return bulls, cows
+                COWS += 1
+    return BULLS, COWS
 
-
-
-def del_bad_answers(ans, enemy_try, bull, cow):
+def del_bad_answers(ans, enem, bull, cow):
     """проверить и удалить неверные числа для ввода"""
     for num in ans[:]:
-        temp_bull, temp_cow = check(num, enemy_try)
+        temp_bull, temp_cow = check(num, enem)
         if temp_bull != bull or temp_cow != cow:
             ans.remove(num)
     return ans
 
-
 print("Игра быки и коровы")
-
 answers = get_all_answers()
 player = input_number()
 enemy = get_one_answer(answers)
@@ -114,5 +106,4 @@ while True:
         print("Победил компьютер!")
         print("Компьютер загадал число: ", enemy)
         break
-    else:
         answers = del_bad_answers(answers, enemy_try, bulls, cows)
