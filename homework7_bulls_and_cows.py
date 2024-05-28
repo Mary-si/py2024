@@ -105,11 +105,10 @@ while True:
     print("Ход компьютера")
     enemy_try = get_one_answer(answers)
     print("Компьютер считает, что вы загадали число: ", enemy_try)
+    answers = del_bad_answers(answers, enemy_try, bulls, cows)
     bulls, cows = check(enemy_try, player)
     print("Быки: ", bulls, "Коровы: ", cows)
     if bulls == 4:
         print("Победил компьютер!")
         print("Компьютер загадал число: ", enemy)
         break
-    else:
-        answers = del_bad_answers(answers, enemy_try, bulls, cows)
