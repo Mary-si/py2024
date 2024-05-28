@@ -26,6 +26,7 @@
 import random
 
 
+
 def get_all_answers():
     """создавать список всех вариантов комбинаций"""
     ans = []
@@ -41,11 +42,13 @@ def get_all_answers():
             ans.append(list(map(int, tmp)))
     return ans
 
+
 def get_one_answer(ans):
     """выбрать один ответ из списка возможны"""
     # выбрать число случайным образом
     num = random.choice(ans)
     return num
+
 
 def input_number():
     """запросить ввести 4 неповторяющиеся цифры"""
@@ -61,6 +64,7 @@ def input_number():
             break
     return nums
 
+
 def check(nums, true_nums):
     """сравнить два числа и сообщить кол-во быков и коров"""
     BULLS, COWS = 0, 0
@@ -73,6 +77,7 @@ def check(nums, true_nums):
                 COWS += 1
     return BULLS, COWS
 
+
 def del_bad_answers(ans, enem, bull, cow):
     """проверить и удалить неверные числа для ввода"""
     for num in ans[:]:
@@ -80,6 +85,7 @@ def del_bad_answers(ans, enem, bull, cow):
         if temp_bull != bull or temp_cow != cow:
             ans.remove(num)
     return ans
+
 
 print("Игра быки и коровы")
 answers = get_all_answers()
