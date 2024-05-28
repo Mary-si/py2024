@@ -40,13 +40,15 @@ def get_all_answers():
             ans.append(list(map(int, tmp)))
     return ans
 
-# выбрать один ответ из списка возможных
+# выбрать один ответ из списка возможны
+
 def get_one_answer(ans):
     # выбрать число случайным образом
     num = random.choice(ans)
     return num
 
 # запросить ввести 4 неповторяющиеся цифры
+
 def input_number():
     while True:
         nums = input("Введите 4 неповторяющиеся цифры: ")
@@ -61,6 +63,7 @@ def input_number():
     return nums
 
 # сравнить два числа и сообщить кол-во быков и коров
+
 def check(nums, true_nums):
     bulls, cows = 0, 0
     for i, num in enumerate(nums):
@@ -73,7 +76,8 @@ def check(nums, true_nums):
     return bulls, cows
 
 # проверить и удалить неверные числа для ввода
-def del_bad_answers (ans, enemy_try, bull, cow):
+
+def del_bad_answers(ans, enemy_try, bull, cow):
     for num in ans[:]:
         temp_bull, temp_cow = check(num, enemy_try)
         if temp_bull != bull or temp_cow != cow:
@@ -108,5 +112,3 @@ while True:
         break
     else:
         answers = del_bad_answers(answers, enemy_try, bulls, cows)
-
-
