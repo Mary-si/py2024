@@ -42,12 +42,15 @@ def get_all_answers():
 
 # выбрать один ответ из списка возможны
 
+
 def get_one_answer(ans):
     # выбрать число случайным образом
     num = random.choice(ans)
     return num
 
+
 # запросить ввести 4 неповторяющиеся цифры
+
 
 def input_number():
     while True:
@@ -62,7 +65,9 @@ def input_number():
             break
     return nums
 
+
 # сравнить два числа и сообщить кол-во быков и коров
+
 
 def check(nums, true_nums):
     bulls, cows = 0, 0
@@ -75,7 +80,9 @@ def check(nums, true_nums):
                 cows += 1
     return bulls, cows
 
+
 # проверить и удалить неверные числа для ввода
+
 
 def del_bad_answers(ans, enemy_try, bull, cow):
     for num in ans[:]:
@@ -83,6 +90,7 @@ def del_bad_answers(ans, enemy_try, bull, cow):
         if temp_bull != bull or temp_cow != cow:
             ans.remove(num)
     return ans
+
 
 print("Игра быки и коровы")
 
