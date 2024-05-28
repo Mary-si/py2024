@@ -26,7 +26,6 @@
 import random
 
 
-
 def get_all_answers():
     """создавать список всех вариантов комбинаций"""
     ans = []
