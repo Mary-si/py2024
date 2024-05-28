@@ -66,15 +66,15 @@ def input_number():
 
 def check(nums, true_nums):
     """сравнить два числа и сообщить кол-во быков и коров"""
-    BULLS, COWS = 0, 0
+    bulls1, cows1 = 0, 0
     for i, num in enumerate(nums):
         if num in true_nums:
             # проверяем позицию цифры под цифрой на бык или корова
             if nums[i] == true_nums[i]:
-                BULLS += 1
+                bulls1 += 1
             else:
-                COWS += 1
-    return BULLS, COWS
+                cows1 += 1
+    return bulls1, cows1
 
 
 def del_bad_answers(ans, enem, bull, cow):
@@ -111,4 +111,5 @@ while True:
         print("Победил компьютер!")
         print("Компьютер загадал число: ", enemy)
         break
+    elif:
         answers = del_bad_answers(answers, enemy_try, bulls, cows)
