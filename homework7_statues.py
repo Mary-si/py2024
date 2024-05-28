@@ -26,19 +26,19 @@ for i in statues:
 statues.sort()
 print(statues)
 
-count = 0
+COUNT = 0
 
 # узнать кол-во цифр в заданном списке
-a = len(statues)
-print(a)
+A = len(statues)
+print(A)
 
 # узнать первый символ строки
-first_symbol = statues[0]
+FIRST_SYMBOL = statues[0]
 
 # узнать последний символ строки
-last_symbol = statues[-1]
+LAST_SYMBOL = statues[-1]
 
-print(first_symbol, last_symbol)
+print(FIRST_SYMBOL, LAST_SYMBOL)
 
 # узнать кол-во цифр сколько цифр от 2 до 8
 x = list(range(2, 9))
@@ -49,5 +49,5 @@ p = len(x)
 print(p)
 
 # определить количество отсутствующих статуй
-y = p - a
+y = p - A
 print("Количество отсутствующих статуй:", y)

@@ -26,8 +26,8 @@
 import random
 
 
-# создавать список всех вариантов комбинаций
 def get_all_answers():
+    """создавать список всех вариантов комбинаций"""
     ans = []
     for i in range(10000):
         tmp = str(i).zfill(4)
@@ -41,19 +41,17 @@ def get_all_answers():
             ans.append(list(map(int, tmp)))
     return ans
 
-# выбрать один ответ из списка возможны
 
 
 def get_one_answer(ans):
+    """выбрать один ответ из списка возможны"""
     # выбрать число случайным образом
     num = random.choice(ans)
     return num
 
 
-# запросить ввести 4 неповторяющиеся цифры
-
-
 def input_number():
+    """запросить ввести 4 неповторяющиеся цифры"""
     while True:
         nums = input("Введите 4 неповторяющиеся цифры: ")
         # проверяем на длинну 4 символа и isdigit - проверяет что это не цифры
@@ -67,10 +65,8 @@ def input_number():
     return nums
 
 
-# сравнить два числа и сообщить кол-во быков и коров
-
-
 def check(nums, true_nums):
+    """сравнить два числа и сообщить кол-во быков и коров"""
     bulls, cows = 0, 0
     for i, num in enumerate(nums):
         if num in true_nums:
@@ -82,10 +78,9 @@ def check(nums, true_nums):
     return bulls, cows
 
 
-# проверить и удалить неверные числа для ввода
-
 
 def del_bad_answers(ans, enemy_try, bull, cow):
+    """проверить и удалить неверные числа для ввода"""
     for num in ans[:]:
         temp_bull, temp_cow = check(num, enemy_try)
         if temp_bull != bull or temp_cow != cow:

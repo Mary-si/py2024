@@ -22,9 +22,9 @@
 
 print("Пирамида")
 
-a = "*"
-b = " "
-n = 10
+A = "*"
+B = " "
+N = 10
 
-for i in range(n):  # i = 0, 1, 2, ...
-    print(b*(n-1-i) + a*(i+1) + a*i)
+for i in range(N):  # i = 0, 1, 2, ...
+    print(B*(N-1-i) + A*(i+1) + A*i)
