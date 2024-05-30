@@ -10,17 +10,17 @@
 # Примеры
 # Для n = 10 и first_number = 2 вывод должен быть (n, first_number) = 7.
 
-n = 10
-first_number = 2
+N = 10
+FIRST_NUMBER = 2
 
 # a = list(range(n))
 # print(a)
 
 # закономерность
-b = (n//2)
+B = N//2
 # print(b)
 
-if first_number >= 5:
-    print(first_number - b)
-if first_number < 5:
-    print(first_number + b)
+if FIRST_NUMBER >= 5:
+    print(FIRST_NUMBER - B)
+if FIRST_NUMBER < 5:
+    print(FIRST_NUMBER + B)

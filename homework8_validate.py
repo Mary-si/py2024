@@ -11,7 +11,7 @@
 # validate(4561261212345464) #=> False
 # validate(4561261212345467) #=> True
 
-
+"""Проверка кредитной карты"""
 def validate_number(card):
     # сумма чисел
     sum_numbers = 0
