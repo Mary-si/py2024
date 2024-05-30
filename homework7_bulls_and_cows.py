@@ -24,6 +24,8 @@
 # Вы выиграли!
 
 import random
+digits = random.sample("0123456789", 4)
+print(int("".join(digits)))
 
 
 def get_all_answers():

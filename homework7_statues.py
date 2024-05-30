@@ -22,23 +22,14 @@ for i in statues:
         print("В списке ошибка. Список может содержать только"
               "положительные и целые числа", i)
 
-# отсортировать от меньшего к большему
-statues.sort()
-print(statues)
-
-COUNT = 0
+# выбрать min и max значение из списка
+y = min(statues)
+z = max(statues)
+print(y, z)
 
 # узнать кол-во цифр в заданном списке
 A = len(statues)
 print(A)
-
-# узнать первый символ строки
-FIRST_SYMBOL = statues[0]
-
-# узнать последний символ строки
-LAST_SYMBOL = statues[-1]
-
-print(FIRST_SYMBOL, LAST_SYMBOL)
 
 # узнать кол-во цифр сколько цифр от 2 до 8
 x = list(range(2, 9))
