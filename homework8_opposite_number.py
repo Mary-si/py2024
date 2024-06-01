@@ -13,14 +13,10 @@
 N = 10
 FIRST_NUMBER = 2
 
-# a = list(range(n))
-# print(a)
-
 # закономерность
 B = N//2
-# print(b)
 
-if FIRST_NUMBER >= 5:
+if FIRST_NUMBER >= B:
     print(FIRST_NUMBER - B)
-if FIRST_NUMBER < 5:
+if FIRST_NUMBER < B:
     print(FIRST_NUMBER + B)
