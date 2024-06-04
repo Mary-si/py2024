@@ -16,7 +16,7 @@ def count_s(a):
     symbol = a[0]
     count = 0
     sum_sym = ""
-    for i, s in enumerate(a):
+    for [_, s] in enumerate(a):
         if symbol == s:
             count += 1
         if symbol != s:
