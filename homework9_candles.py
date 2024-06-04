@@ -32,6 +32,7 @@
 
 
 def solution(candles_number, make_new):
+    """Подсчет количества свечей"""
     total_candles = candles_number
     remainder = candles_number
     while remainder >= make_new:

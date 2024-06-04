@@ -11,6 +11,7 @@
 
 
 def count_s(a):
+    """Преобразование из "cccbba" в c3b2a"""
     symbol = a[0]
     count = 0
     sum_sym = ""
