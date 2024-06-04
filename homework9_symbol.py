@@ -16,13 +16,13 @@ def count_s(a):
     symbol = a[0]
     count = 0
     sum_sym = ""
-    for i in range(len(a)):
-        if symbol == a[i]:
+    for i, s in enumerate(a):
+        if symbol == s:
             count += 1
-        if symbol != a[i]:
+        if symbol != s:
             sum_sym += symbol
             sum_sym += str(count)
-            symbol = a[i]
+            symbol = s
             count = 1
     sum_sym += str(symbol)
     sum_sym += str(count)
@@ -31,3 +31,7 @@ def count_s(a):
 
 # Проверка
 print(count_s("cccbba"))
+print(count_s("abeehhhhhccced"))
+print(count_s("aaabbceedd"))
+print(count_s("abcde"))
+print(count_s("aaabbdefffff"))
