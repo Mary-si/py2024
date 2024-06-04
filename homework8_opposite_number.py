@@ -10,13 +10,12 @@
 # Примеры
 # Для n = 10 и first_number = 2 вывод должен быть (n, first_number) = 7.
 
-N = 10
-FIRST_NUMBER = 2
+N = int(input("Введите сколько всего чисел в круге: "))
+FIRST_NUMBER = int(input("Введи число, напротив которого надо найти: "))
 
-# закономерность
-B = N//2
+if FIRST_NUMBER >= N // 2:
+    NUMBER = FIRST_NUMBER - (N // 2)
+else:
+    NUMBER = FIRST_NUMBER + (N // 2)
 
-if FIRST_NUMBER >= B:
-    print(FIRST_NUMBER - B)
-if FIRST_NUMBER < B:
-    print(FIRST_NUMBER + B)
+print(NUMBER)
