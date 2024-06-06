@@ -26,12 +26,12 @@ def validate_arguments(func):
 
 
 @validate_arguments
-def sp(*args):
+def positive_func_args(*args):
     print(*args)
 
 
 # Проверка функции с положительными числами
-sp(1, 2, 3)
+positive_func_args(1, 2, 3)
 
 # Проверка функции с числом =< 0
-sp(-1, 2, 3)
+positive_func_args(-1, 2, 3)
