@@ -30,7 +30,8 @@ def typed(expected_type):
             if isinstance(a, expected_type) and isinstance(b, expected_type):
                 func(a, b)
             else:
-                print(f"Не верный тип аргумета, он должен быть типа {expected_type}")
+                print(f"Не верный тип аргумета, он должен быть "
+                      f"типа {expected_type}")
         return numbers
     return decorator
 
@@ -53,7 +54,8 @@ def typed1(expected_type):
                     and isinstance(c, expected_type)):
                 func(a, b, c)
             else:
-                print(f"Не верный тип аргумета, он должен быть типа {expected_type}")
+                print(f"Не верный тип аргумета, он должен быть"
+                      f"типа {expected_type}")
         return numbers
     return decorator
 
@@ -74,7 +76,8 @@ def typed2(expected_type):
                     and isinstance(c, expected_type)):
                 func(a, b, c)
             else:
-                print(f"Не верный тип аргумета, он должен быть типа {expected_type}")
+                print(f"Не верный тип аргумета, он должен быть"
+                      f"типа {expected_type}")
         return numbers
     return decorator
 

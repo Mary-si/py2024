@@ -6,7 +6,8 @@
 #
 # Внутри декоратора, после вызова функции,
 # проверьте тип результата с помощью функции isinstance().
-# Если тип не является числом, выведите сообщение об ошибке с помощью функции print().
+# Если тип не является числом,
+# выведите сообщение об ошибке с помощью функции print().
 
 
 def typed(expected_type):
@@ -15,7 +16,8 @@ def typed(expected_type):
             if isinstance(a, expected_type) and isinstance(b, expected_type):
                 func(a, b)
             else:
-                print(f"Не верный тип аргумета, должно быть число, тип {expected_type}")
+                print(f"Не верный тип аргумета, должно быть число,"
+                      f"тип {expected_type}")
         return numbers
     return decorator
 
