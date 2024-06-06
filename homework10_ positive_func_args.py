@@ -18,16 +18,16 @@
 def validate_arguments(func):
     """проверяет что все аргументы функции являются положительными числами"""
     def wrapper(*args):
-        for arg in args:
-            if arg < 0:
+        for i in args:
+            if i < 0:
                 raise ValueError("Введите положительное число")
-        return func(*args,)
+        return func(*args)
     return wrapper
 
 
 @validate_arguments
 def sp(*args):
-    print(args)
+    print(*args)
 
 
 # Проверка функции с положительными числами
