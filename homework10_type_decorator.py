@@ -46,7 +46,7 @@ add(5, 5)
 add('a', 'b')
 
 
-def typed(expected_type):
+def typed1(expected_type):
     def decorator(func):
         def numbers(a, b, c):
             if (isinstance(a, expected_type) and isinstance(b, expected_type)
@@ -58,16 +58,16 @@ def typed(expected_type):
     return decorator
 
 
-@typed(int)
-def add(a, b, c):
+@typed1(int)
+def add1(a, b, c):
     print(a + b + c)
 
 
 # Проверка
-add(5, 6, 7)
+add1(5, 6, 7)
 
 
-def typed(expected_type):
+def typed2(expected_type):
     def decorator(func):
         def numbers(a, b, c):
             if (isinstance(a, expected_type) and isinstance(b, expected_type)
@@ -79,10 +79,10 @@ def typed(expected_type):
     return decorator
 
 
-@typed(float)
-def add(a, b, c):
+@typed2(float)
+def add2(a, b, c):
     print(a + b + c)
 
 
 # Проверка
-add(0.1, 0.2, 0.4)
+add2(0.1, 0.2, 0.4)
