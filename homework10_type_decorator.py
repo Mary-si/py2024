@@ -25,6 +25,7 @@
 # add(0.1, 0.2, 0.4) -> 0.7000000000000001
 
 def typed(expected_type):
+    """проверяет тип параметров функции"""
     def decorator(func):
         def numbers(a, b):
             if isinstance(a, expected_type) and isinstance(b, expected_type):
@@ -48,6 +49,7 @@ add('a', 'b')
 
 
 def typed1(expected_type):
+    """проверяет тип параметров функции"""
     def decorator(func):
         def numbers(a, b, c):
             if (isinstance(a, expected_type) and isinstance(b, expected_type)
@@ -70,6 +72,7 @@ add1(5, 6, 7)
 
 
 def typed2(expected_type):
+    """проверяет тип параметров функции"""
     def decorator(func):
         def numbers(a, b, c):
             if (isinstance(a, expected_type) and isinstance(b, expected_type)

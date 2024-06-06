@@ -32,14 +32,14 @@
 
 
 def cache(func):
-    """Кэш предыдущих вызовов функций"""
+    """кэширует результаты вызова функции, возвращает закэшированное значение"""
     cache_number = {}
 
     def wrapper(*args):
         if args in cache_number:
             return cache_number[args]
         result = func(*args)
-        cache_number[args] = result  # Сохраняем результат в кэш
+        cache_number[args] = result
         return result
     return wrapper
 

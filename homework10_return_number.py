@@ -11,6 +11,7 @@
 
 
 def typed(expected_type):
+    """проверяет, является ли результат функции числом"""
     def decorator(func):
         def numbers(a, b):
             if isinstance(a, expected_type) and isinstance(b, expected_type):
