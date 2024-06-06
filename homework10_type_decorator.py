@@ -49,7 +49,8 @@ add('a', 'b')
 def typed(expected_type):
     def decorator(func):
         def numbers(a, b, c):
-            if isinstance(a, expected_type) and isinstance(b, expected_type) and isinstance(c, expected_type):
+            if (isinstance(a, expected_type) and isinstance(b, expected_type)
+                    and isinstance(c, expected_type)):
                 func(a, b, c)
             else:
                 print(f"Не верный тип аргумета, он должен быть типа {expected_type}")
@@ -69,7 +70,8 @@ add(5, 6, 7)
 def typed(expected_type):
     def decorator(func):
         def numbers(a, b, c):
-            if isinstance(a, expected_type) and isinstance(b, expected_type) and isinstance(c, expected_type):
+            if (isinstance(a, expected_type) and isinstance(b, expected_type)
+                    and isinstance(c, expected_type)):
                 func(a, b, c)
             else:
                 print(f"Не верный тип аргумета, он должен быть типа {expected_type}")
