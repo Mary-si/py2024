@@ -39,6 +39,7 @@ def typed(expected_type):
 
 @typed(str)
 def add(a, b):
+    """суммируем"""
     print(a + b)
 
 
@@ -64,6 +65,7 @@ def typed1(expected_type):
 
 @typed1(int)
 def add1(a, b, c):
+    """суммируем"""
     print(a + b + c)
 
 
@@ -87,6 +89,7 @@ def typed2(expected_type):
 
 @typed2(float)
 def add2(a, b, c):
+    """суммируем"""
     print(a + b + c)
 
 

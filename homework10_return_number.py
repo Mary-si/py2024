@@ -25,6 +25,7 @@ def typed(expected_type):
 
 @typed(int)
 def add(a, b):
+    """суммируем"""
     print(a + b)
 
 
