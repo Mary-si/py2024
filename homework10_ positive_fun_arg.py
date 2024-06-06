@@ -34,4 +34,4 @@ def positive_func_args(*args):
 positive_func_args(1, 2, 3)
 
 # Проверка функции с числом =< 0
-positive_func_args(-1, 2, 3)
+#positive_func_args(-1, 2, 3)
