@@ -27,6 +27,7 @@ def validate_arguments(func):
 
 @validate_arguments
 def positive_func_args(*args):
+    """вывод"""
     print(*args)
 
 
