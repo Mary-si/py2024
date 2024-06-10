@@ -65,7 +65,7 @@ def typed1(expected_type):
 
 @typed1(int)
 def add1(a, b, c):
-    """суммируем"""
+    """суммируем все"""
     print(a + b + c)
 
 
