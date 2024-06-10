@@ -34,7 +34,7 @@ class Bank:  # pylint: disable=too-few-public-methods
         self.percent_deposit = percent_deposit
 
     def calculate(self):
-        """калькулятор"""
+        """калькулятор """
         for _ in range(self.deposit_term_year * 12):
             self.deposit_amount += (self.deposit_amount *
                                     (self.percent_deposit / 12))

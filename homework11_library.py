@@ -22,7 +22,7 @@ class Book:
         self.flag = flag
 
     def check_status_book(self):
-        """статус"""
+        """статус """
         return self.flag == "Available"
 
     def take(self):
