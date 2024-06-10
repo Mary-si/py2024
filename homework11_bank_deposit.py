@@ -32,15 +32,17 @@ deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 class Bank:
     """Инфорация о договорах пользователя"""
+    all_user = 0
 
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
         self.deposit_term_year = deposit_term_year
         self.percent_deposit = percent_deposit
+        Bank.all_user += 1
 
     def calculate(self):
         """калькулятор"""
-        for i in range(self.deposit_term_year * 12):
+        for _ in range(self.deposit_term_year * 12):
             self.deposit_amount += (self.deposit_amount *
                                     (self.percent_deposit / 12))
         return self.deposit_amount
