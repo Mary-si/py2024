@@ -15,14 +15,11 @@
 
 class Deposit:
     """Инфорация депозитов"""
-    # атрибуты класса
-    all_deposit = 0
 
     # создаем методы класса
     def __init__(self, deposit_start_date, end_date_deposit):
         self.deposit_start_date = deposit_start_date
         self.end_date_deposit = end_date_deposit
-        Deposit.all_deposit += 1
 
 
 deposit_1 = Deposit("08.09.2021", "08.09.2025")
@@ -32,13 +29,11 @@ deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 class Bank:
     """Инфорация о договорах пользователя"""
-    all_user = 0
 
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
         self.deposit_term_year = deposit_term_year
         self.percent_deposit = percent_deposit
-        Bank.all_user += 1
 
     def calculate(self):
         """калькулятор"""

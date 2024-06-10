@@ -12,8 +12,6 @@
 
 class Book:
     """Инфорация о книгах"""
-    # атрибуты класса
-    all_book = 0
 
     # создаем методы класса
     def __init__(self, title, author, pages, isbn, flag="Available"):
@@ -22,7 +20,6 @@ class Book:
         self.pages = pages
         self.isbn = isbn
         self.flag = flag
-        Book.all_book += 1
 
     def check_status_book(self):
         """статус"""
@@ -50,8 +47,7 @@ book_3 = Book("Cat", "Leo Rangell", 300,
 
 
 class User:
-    # атрибуты класса
-    all_user = 0
+    """Информация о пользователях"""
 
     # создаем методы класса
     def __init__(self, name, surname, id_number):
@@ -61,7 +57,6 @@ class User:
         self.took_book = None
         self.returned_book = None
         self.reservated_book = None
-        User.all_user += 1
 
     def take_book(self, book):
         """когда взяли книгу"""
