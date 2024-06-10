@@ -37,8 +37,10 @@ class Bank:
         self.percent_deposit = percent_deposit
 
     def calculate(self):
+        """калькулятор"""
         for i in range(self.deposit_term_year * 12):
-            self.deposit_amount += self.deposit_amount * (self.percent_deposit / 12)
+            self.deposit_amount += (self.deposit_amount *
+                                    (self.percent_deposit / 12))
         return self.deposit_amount
 
 
@@ -46,6 +48,7 @@ user_1 = Bank(20000, 4, 0.05)
 user_2 = Bank(5000, 3, 0.03)
 user_3 = Bank(2000, 1, 0.01)
 
-
+# Проверка
 final_amount_user_1 = user_1.calculate()
-print(f"Сумма на счету у пользователя {user_1.deposit_term_year} лет будет {final_amount_user_1:.2f} рублей")
+print(f"Сумма на счету у пользователя {user_1.deposit_term_year} лет,"
+      f"будет {final_amount_user_1:.2f} рублей")

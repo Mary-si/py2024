@@ -4,7 +4,8 @@
 # Создайте класс book с именем книги, автором, кол-м страниц, ISBN,
 # флагом, зарезервирована ли книги или нет.
 #
-# Создайте класс пользователь который может брать книгу, возвращать, бронировать.
+# Создайте класс пользователь который может брать книгу,
+# возвращать, бронировать.
 #
 # Если другой пользователь хочет взять зарезервированную книгу
 # (или которую уже кто-то читает - надо ему про это сказать).
@@ -23,15 +24,19 @@ class Book:
         Book.all_book += 1
 
     def check_status_book(self):
+        """статус"""
         return self.flag == "Available"
 
     def take(self):
+        """статус"""
         self.flag = "Took"
 
     def returned(self):
+        """статус"""
         self.flag = "Available"
 
     def reservation(self):
+        """статус"""
         self.flag = "Reservation"
 
 
@@ -58,25 +63,31 @@ class User:
         User.all_user += 1
 
     def take_book(self, book):
+        """когда взяли книгу"""
         if book.check_status_book():
             self.took_book = book
             book.take()
-            print(f"Пользователь взялл книгу: {self.name} {self.surname} {self.__id_number}")
+            print(f"Пользователь взялл книгу: {self.name}"
+                  f"{self.surname} {self.__id_number}")
         else:
             print(f"Книга взята или зарезервирована пользователем")
 
     def return_book(self, book):
+        """когда вернули книгу"""
         if self.took_book == book:
             book.returned()
-            print(f"Пользователь вернул книгу: {self.name}, {self.surname}, {self.__id_number}")
+            print(f"Пользователь вернул книгу: {self.name},"
+                  f"{self.surname}, {self.__id_number}")
         else:
             print(f"У пользователя нет взятых книг")
 
     def reservation_book(self, book):
+        """когда зарезервировали книгу"""
         if book.check_status_book():
             self.reservated_book = book
             book.reservation()
-            print(f"Пользователь забронировал книгу: {self.name}, {self.surname}, {self.__id_number}")
+            print(f"Пользователь забронировал книгу: {self.name},"
+                  f"{self.surname}, {self.__id_number}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)
