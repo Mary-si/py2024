@@ -25,52 +25,29 @@
 # add(0.1, 0.2, 0.4) -> 0.7000000000000001
 
 def typed(expected_type):
-    """проверяет тип параметров функции"""
+    """проверяет типы параметров функции"""
     def decorator(func):
-        def numbers(a, b):
-            if isinstance(a, expected_type) and isinstance(b, expected_type):
-                func(a, b)
+        def wrapper(*args):
+            if all(isinstance(arg, expected_type) for arg in args):
+                return func(*args)
             else:
                 print(f"Не верный тип аргумета, он должен быть "
                       f"типа {expected_type}")
-        return numbers
+        return wrapper
     return decorator
 
 
-@typed(str)
-def add(a, b):
+@typed(int)
+def add(*args):
     """суммируем"""
-    print(a + b)
+    print(sum(args))
 
 
 # Проверка
 add("3", 5)
 add(5, 5)
 add('a', 'b')
-
-
-def typed1(expected_type):
-    """проверяет тип параметров функции"""
-    def decorator(func):
-        def numbers(a, b, c):
-            if (isinstance(a, expected_type) and isinstance(b, expected_type)
-                    and isinstance(c, expected_type)):
-                func(a, b, c)
-            else:
-                print(f"Не верный тип аргумета, он должен быть"
-                      f"типа {expected_type}")
-        return numbers
-    return decorator
-
-
-@typed1(int)
-def add1(a, b, c):
-    """суммируем"""
-    print(a + b + c)
-
-
-# Проверка
-add1(5, 6, 7)
+add(5, 6, 7)
 
 
 def typed2(expected_type):

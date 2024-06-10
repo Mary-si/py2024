@@ -48,12 +48,20 @@ def cache(func):
 @cache
 def fibonacci(n):
     """выполнение """
-    if n <= 1:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+    # if n <= 1:
+    #     return n
+    # return fibonacci(n - 1) + fibonacci(n - 2)
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 # Проверка
-print(fibonacci(5))  # Вывод: 5
-print(fibonacci(10))  # Вывод: 55
-print(fibonacci(5))  # Вывод: 5 (значение взято из кэша)
+assert fibonacci(5) == 5
+assert fibonacci(10) == 55
+
+print(fibonacci(10))
+print(fibonacci(5))
