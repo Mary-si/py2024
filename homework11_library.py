@@ -70,7 +70,8 @@ class User:
             print(f"Пользователь взялл книгу: {self.name}"
                   f"{self.surname} {self.__id_number}")
         else:
-            print(f"Книга взята или зарезервирована пользователем")
+            print(f"Книга взята или зарезервирована пользователем"
+                  f"{self.name} {self.surname}, {self.__id_number}")
 
     def return_book(self, book):
         """когда вернули книгу"""
@@ -79,7 +80,8 @@ class User:
             print(f"Пользователь вернул книгу: {self.name},"
                   f"{self.surname}, {self.__id_number}")
         else:
-            print(f"У пользователя нет взятых книг")
+            print(f"У пользователя {self.name},{self.surname},"
+                  f"{self.__id_number} нет взятых книг")
 
     def reservation_book(self, book):
         """когда зарезервировали книгу"""

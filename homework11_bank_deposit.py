@@ -14,6 +14,7 @@
 
 
 class Deposit:
+    """Инфорация депозитов"""
     # атрибуты класса
     all_deposit = 0
 
@@ -30,6 +31,8 @@ deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 
 class Bank:
+    """Инфорация о договорах пользователя"""
+
 
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
