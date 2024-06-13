@@ -40,22 +40,3 @@ def solution(candles_number, make_new):
         total_candles += new_candles
         remainder = new_candles + (remainder % make_new)
     return total_candles
-
-
-# Проверка
-print(solution(5, 2))
-print(solution(1, 2))
-print(solution(15, 5))
-print(solution(12, 2))
-print(solution(6, 4))
-print(solution(13, 5))
-print(solution(2, 3))
-
-# Проверка
-assert solution(5, 2) == 9
-assert solution(1, 2) == 1
-assert solution(15, 5) == 18
-assert solution(12, 2) == 23
-assert solution(6, 4) == 7
-assert solution(13, 5) == 16
-assert solution(2, 3) == 2

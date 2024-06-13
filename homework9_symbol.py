@@ -16,22 +16,20 @@ def count_s(a):
     symbol = a[0]
     count = 0
     sum_sym = ""
-    for [_, s] in enumerate(a):
-        if symbol == s:
+    for i in a:
+        if symbol == i:
             count += 1
-        if symbol != s:
-            sum_sym += symbol
-            sum_sym += str(count)
-            symbol = s
+        else:
+            sum_sym += symbol +str(count)
+            symbol = i
             count = 1
-    sum_sym += str(symbol)
-    sum_sym += str(count)
+    sum_sym += symbol + str(count)
     return sum_sym.replace("1", "")
 
 
 # Проверка
-print(count_s("cccbba"))
-print(count_s("abeehhhhhccced"))
-print(count_s("aaabbceedd"))
-print(count_s("abcde"))
-print(count_s("aaabbdefffff"))
+assert count_s("cccbba") == "c3b2a"
+assert count_s("abeehhhhhccced") == "abe2h5c3ed"
+assert count_s("aaabbceedd") == "a3b2ce2d2"
+assert count_s("abcde") == "abcde"
+assert count_s("aaabbdefffff") == "a3b2def5"

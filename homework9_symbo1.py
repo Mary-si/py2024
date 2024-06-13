@@ -29,8 +29,8 @@ def symbols(s):
 
 
 # Проверка
-print(symbols("a#bc#d"))
-print(symbols("abc#d##c"))
-print(symbols("abc##d######"))
-print(symbols("#######"))
-print(symbols(""))
+assert symbols("a#bc#d") == "bd"
+assert symbols("abc#d##c") == "ab"
+assert symbols("abc##d######") == ""
+assert symbols("#######") == ""
+assert symbols("") == ""
