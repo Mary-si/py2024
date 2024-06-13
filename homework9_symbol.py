@@ -20,7 +20,7 @@ def count_s(a):
         if symbol == i:
             count += 1
         else:
-            sum_sym += symbol +str(count)
+            sum_sym += symbol + str(count)
             symbol = i
             count = 1
     sum_sym += symbol + str(count)
