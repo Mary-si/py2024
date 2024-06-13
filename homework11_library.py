@@ -43,6 +43,7 @@ class Book:
             return True
         return False
 
+
 book_1 = Book("Tree", "Thomas Wyatt", 180,
               "978-5-06-002611-5")
 book_2 = Book("Sea", "William Shakespeare", 230,
