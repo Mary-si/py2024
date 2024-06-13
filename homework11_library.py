@@ -14,29 +14,34 @@ class Book:
     """Инфорация о книгах"""
 
     # создаем методы класса
-    def __init__(self, title, author, pages, isbn, flag="Available"):
+    def __init__(self, title, author, pages, isbn, flag=True):
         self.title = title
         self.author = author
         self.pages = pages
         self.isbn = isbn
-        self.flag = flag
+        self.flag = flag   # True - доступна. False - взята. None - зарезервирована
 
     def check_status_book(self):
         """статус """
-        return self.flag == "Available"
+        return self.flag
 
     def take(self):
         """статус"""
-        self.flag = "Took"
+        if self.flag is True:
+            self.flag = False
+            return True
+        return False
 
     def returned(self):
         """статус"""
-        self.flag = "Available"
+        self.flag = True
 
     def reservation(self):
         """статус"""
-        self.flag = "Reservation"
-
+        if self.flag is True:
+            self.flag = None
+            return True
+        return False
 
 book_1 = Book("Tree", "Thomas Wyatt", 180,
               "978-5-06-002611-5")
@@ -60,10 +65,9 @@ class User:
 
     def take_book(self, book):
         """когда взяли книгу"""
-        if book.check_status_book():
+        if book.take():
             self.took_book = book
-            book.take()
-            print(f"Пользователь взялл книгу: {self.name}"
+            print(f"Пользователь взял книгу: {self.name}"
                   f"{self.surname} {self.__id_number}")
         else:
             print(f"Книга взята или зарезервирована пользователем"
@@ -73,6 +77,7 @@ class User:
         """когда вернули книгу"""
         if self.took_book == book:
             book.returned()
+            self.took_book = None
             print(f"Пользователь вернул книгу: {self.name},"
                   f"{self.surname}, {self.__id_number}")
         else:
@@ -81,9 +86,8 @@ class User:
 
     def reservation_book(self, book):
         """когда зарезервировали книгу"""
-        if book.check_status_book():
+        if book.reservation():
             self.reservated_book = book
-            book.reservation()
             print(f"Пользователь забронировал книгу: {self.name},"
                   f"{self.surname}, {self.__id_number}")
 
