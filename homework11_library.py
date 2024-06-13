@@ -14,32 +14,33 @@ class Book:
     """Инфорация о книгах"""
 
     # создаем методы класса
-    def __init__(self, title, author, pages, isbn, flag=True):
+    def __init__(self, title, author, pages, isbn):
         self.title = title
         self.author = author
         self.pages = pages
         self.isbn = isbn
-        self.flag = flag   # True - доступна. False - взята. None - зарезервирована
+        self.status = True
+        # True - доступна. False - взята. None - зарезервирована
 
-    def check_status_book(self):
-        """статус """
-        return self.flag
+    # def check_status_book(self):
+    #     """статус """
+    #     return self.flag
 
     def take(self):
         """статус"""
-        if self.flag is True:
-            self.flag = False
+        if self.status is True:
+            self.status = False
             return True
         return False
 
     def returned(self):
         """статус"""
-        self.flag = True
+        self.status = True
 
     def reservation(self):
         """статус"""
-        if self.flag is True:
-            self.flag = None
+        if self.status is True:
+            self.status = None
             return True
         return False
 
