@@ -19,28 +19,26 @@ class Book:
         self.author = author
         self.pages = pages
         self.isbn = isbn
-        self.status = True
-        # True - доступна. False - взята. None - зарезервирована
-
-    # def check_status_book(self):
-    #     """статус """
-    #     return self.flag
+        self.is_available = True
+        self.is_reserved = False
 
     def take(self):
-        """статус"""
-        if self.status is True:
-            self.status = False
+        """книга взята"""
+        if self.is_available and not self.is_reserved:
+            self.is_available = False
             return True
         return False
 
     def returned(self):
-        """статус"""
-        self.status = True
+        """книга возвращена"""
+        self.is_available = True
+        self.is_reserved = False
+        return True
 
     def reservation(self):
-        """статус"""
-        if self.status is True:
-            self.status = None
+        """книга забронирована"""
+        if self.is_available and not self.is_reserved:
+            self.is_reserved = True
             return True
         return False
 
@@ -62,17 +60,16 @@ class User:
         self.surname = surname
         self.__id_number = id_number
         self.took_book = None
-        self.returned_book = None
-        self.reservated_book = None
+
 
     def take_book(self, book):
         """когда взяли книгу"""
         if book.take():
             self.took_book = book
-            print(f"Пользователь взял книгу: {self.name}"
-                  f"{self.surname} {self.__id_number}")
+            print(f"Пользователь: {self.name} "
+                  f"{self.surname}, {self.__id_number}. Взял книгу: {book.title}")
         else:
-            print(f"Книга взята или зарезервирована пользователем"
+            print(f"Книга ({book.title}) взята или зарезервирована пользователем: "
                   f"{self.name} {self.surname}, {self.__id_number}")
 
     def return_book(self, book):
@@ -80,18 +77,17 @@ class User:
         if self.took_book == book:
             book.returned()
             self.took_book = None
-            print(f"Пользователь вернул книгу: {self.name},"
-                  f"{self.surname}, {self.__id_number}")
+            print(f"Пользователь: {self.name} " 
+                  f"{self.surname}, {self.__id_number}. Вернул книгу: {book.title}")
         else:
-            print(f"У пользователя {self.name},{self.surname},"
+            print(f"У пользователя {self.name} {self.surname},"
                   f"{self.__id_number} нет взятых книг")
 
     def reservation_book(self, book):
         """когда зарезервировали книгу"""
         if book.reservation():
-            self.reservated_book = book
-            print(f"Пользователь забронировал книгу: {self.name},"
-                  f"{self.surname}, {self.__id_number}")
+            print(f"Пользователь: {self.name} "
+                  f"{self.surname}, {self.__id_number}. Забронировал книгу: {book.title}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)
