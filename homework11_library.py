@@ -61,7 +61,6 @@ class User:
         self.__id_number = id_number
         self.took_book = None
 
-
     def take_book(self, book):
         """когда взяли книгу"""
         if book.take():
