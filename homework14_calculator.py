@@ -12,15 +12,8 @@
 # ~ 10 - 3 + 1 8 ~ 2 ** 3 - 1 7
 
 
-# def calculator(expression):
-#     """калькулятор"""
-#     try:
-#         result = eval(expression)
-#     except Exception as e:
-#         return f"Ошибка при вычислении: {e}"
-#     return result
-
 from simpleeval import SimpleEval
+
 
 def calculator(expression):
     """калькулятор с помощью simpleeval"""
