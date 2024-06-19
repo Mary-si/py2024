@@ -29,7 +29,7 @@ deposit_2 = Deposit("02.03.2022", "02.03.2025")
 deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 
-class Bank:  # pylint: disable=too-few-public-methods
+class Bank:
     """Инфорация о договорах пользователя"""
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
