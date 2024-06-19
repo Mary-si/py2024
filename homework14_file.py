@@ -13,6 +13,7 @@ class Students:
     students_by_group = {}
 
     def __init__(self, surname, group, assessments):
+        """информация о студентах"""
         self.surname = surname
         self.group = group
         self.assessments = assessments
@@ -23,10 +24,13 @@ class Students:
             Students.students_by_group[group] = [self]
 
     def __str__(self):
+        """общая информация о студентах"""
         return f"{self.surname}, {self.group}, {self.assessments}"
 
     @classmethod
     def inf_all_students(cls):
+        """общее количество студентов, количество студентов для каждой группы
+        и среднюю оценку для каждой группы"""
         try:
             with open("students.txt", "a") as fu:
                 fu.write(f"Общее количество студентов: {cls.count_students}")
