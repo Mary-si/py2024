@@ -12,16 +12,16 @@
 # ~ 10 - 3 + 1 8 ~ 2 ** 3 - 1 7
 
 
-from simpleeval import SimpleEval
+import ast
 
 
 def calculator(expression):
-    """калькулятор с помощью simpleeval"""
-    simple_evaluator = SimpleEval()
+    """калькулятор"""
     try:
-        result = simple_evaluator.eval(expression)
-    except Exception as e:
-        return f"Ошибка при вычислении: {e}"
+        a = ast.parse(expression, mode="eval")
+        result = eval(compile(a, filename="", mode="eval"))
+    except Exception as b:
+        return f"Ошибка при вычислении: {b}"
     return result
 
 
