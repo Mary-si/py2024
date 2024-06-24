@@ -38,10 +38,8 @@ def safe_eval(node: ast.AST) -> Any:
             return left - right
         if isinstance(node.op, ast.Pow):
             return left ** right
-        else:
-            return None
-    else:
         return None
+    return None
 
 
 def calculator(expression: str) -> Any:
