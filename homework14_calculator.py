@@ -13,13 +13,40 @@
 
 
 import ast
+from typing import Any
 
 
-def calculator(expression):
-    """калькулятор"""
+# def calculator(expression):
+#     """калькулятор"""
+#     try:
+#         a = ast.parse(expression, mode="eval")
+#         result = eval(compile(a, filename="", mode="eval"))
+#     except Exception as b:
+#         return f"Ошибка при вычислении: {b}"
+#     return result
+
+def safe_eval(node: ast.AST) -> Any:
+    """бзопасное вычисление"""
+    if isinstance(node, ast.Constant):
+        return node.value
+    elif isinstance(node, ast.BinOp):
+        left = safe_eval(node.left)
+        right = safe_eval(node.right)
+        if isinstance(node.op, ast.Add):
+            return left + right
+        elif isinstance(node.op, ast.Sub):
+            return left - right
+        elif isinstance(node.op, ast.Pow):
+            return left ** right
+    else:
+        raise ValueError("неподдерживаемый тип")
+
+
+def calculator(expression: str) -> Any:
+    """калькулятор c валидацией и подсказкой типов"""
     try:
-        a = ast.parse(expression, mode="eval")
-        result = eval(compile(a, filename="", mode="eval"))
+        node = ast.parse(expression, mode="eval").body
+        result = safe_eval(node)
     except Exception as b:
         return f"Ошибка при вычислении: {b}"
     return result
