@@ -28,7 +28,7 @@ class Students:
             Students.students_by_group[group] = [self]
 
     def __str__(self):
-        """общая информация о студентах"""
+        """общая информация о студентe"""
         return f"{self.surname}, {self.group}, {self.assessments}"
 
     @classmethod

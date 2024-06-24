@@ -29,17 +29,19 @@ def safe_eval(node: ast.AST) -> Any:
     """бзопасное вычисление"""
     if isinstance(node, ast.Constant):
         return node.value
-    elif isinstance(node, ast.BinOp):
+    if isinstance(node, ast.BinOp):
         left = safe_eval(node.left)
         right = safe_eval(node.right)
         if isinstance(node.op, ast.Add):
             return left + right
-        elif isinstance(node.op, ast.Sub):
+        if isinstance(node.op, ast.Sub):
             return left - right
-        elif isinstance(node.op, ast.Pow):
+        if isinstance(node.op, ast.Pow):
             return left ** right
+        else:
+            return None
     else:
-        raise ValueError("неподдерживаемый тип")
+        return None
 
 
 def calculator(expression: str) -> Any:
@@ -47,7 +49,7 @@ def calculator(expression: str) -> Any:
     try:
         node = ast.parse(expression, mode="eval").body
         result = safe_eval(node)
-    except Exception as b:
+    except ImportError as b:
         return f"Ошибка при вычислении: {b}"
     return result
 
