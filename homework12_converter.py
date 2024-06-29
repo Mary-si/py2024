@@ -37,6 +37,11 @@ class Deposit:  # pylint: disable=too-few-public-methods
                                                   "%d.%m.%Y")
 
 
+# pylint: disable=duplicate-code
+# Your duplicate lines of code here
+# pylint: enable=duplicate-code
+
+
 deposit_1 = Deposit("08.09.2021", "08.09.2025")
 deposit_2 = Deposit("02.03.2022", "02.03.2025")
 deposit_3 = Deposit("01.01.2025", "31.12.2025")
