@@ -78,7 +78,7 @@ class User:
         if self.took_book == book:
             book.returned()
             self.took_book = None
-            print(f"Пользователь: {self.name}" 
+            print(f"Пользователь: {self.name}"
                   f"{self.surname}, {self.__id_number}."
                   f"Вернул книгу: {book.title}")
         else:
