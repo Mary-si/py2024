@@ -81,7 +81,8 @@ class Currency:  # pylint: disable=too-few-public-methods
             return ValueError("Неподдерживаемая исходная валюта")
         if to_currency == "BYN":
             return self.amount * converter[self.currency], "BYN"
-        return (self.amount / converter[self.currency]) * converter[to_currency], to_currency
+        return ((self.amount / converter[self.currency]) *
+                converter[to_currency], to_currency)
 
 
 # Проверка
