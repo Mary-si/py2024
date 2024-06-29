@@ -11,7 +11,8 @@
 import random
 
 
-class Card:
+class Card:  # pylint: disable=too-few-public-methods
+    """информация о картах"""
     number_list = [2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K", "A", "Joker"]
     mast_list = ["clubs", "diamonds", "hearts", "spades"]
 
@@ -24,6 +25,7 @@ class Card:
 
 
 class CardsDeck:
+    """выбор карты"""
     def __init__(self):
         self.cards = [Card(number, mast) for number in Card.number_list[:-1]
                       for mast in Card.mast_list]
@@ -31,13 +33,15 @@ class CardsDeck:
         # Добавляем двух джокеров
 
     def shuffle(self):
+        """выбор"""
         random.shuffle(self.cards)
 
     def get(self, card_n):
+        """выбор"""
         if 1 <= card_n <= 54:
             return self.cards[card_n - 1]
         else:
-            raise ValueError("Номер карты должен быть в диапазоне от 1 до 54")
+            return ValueError("Номер карты должен быть в диапазоне от 1 до 54")
 
 
 deck = CardsDeck()

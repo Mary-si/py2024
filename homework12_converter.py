@@ -27,12 +27,14 @@
 from datetime import datetime
 
 
-class Deposit:
+class Deposit:  # pylint: disable=too-few-public-methods
     """Инфорация депозитов"""
     # создаем методы класса
     def __init__(self, deposit_start_date, end_date_deposit):
-        self.deposit_start_date = datetime.strptime(deposit_start_date, "%d.%m.%Y")
-        self.end_date_deposit = datetime.strptime(end_date_deposit, "%d.%m.%Y")
+        self.deposit_start_date = datetime.strptime(deposit_start_date,
+                                                    "%d.%m.%Y")
+        self.end_date_deposit = datetime.strptime(end_date_deposit,
+                                                  "%d.%m.%Y")
 
 
 deposit_1 = Deposit("08.09.2021", "08.09.2025")
@@ -76,11 +78,12 @@ class Currency:
         if to_currency not in converter:
             raise ValueError("Неподдерживаемая валюта для конвертации")
         if self.currency not in converter:
-            raise ValueError("Неподдерживаемая исходная валюта")
+            return ValueError("Неподдерживаемая исходная валюта")
         if to_currency == "BYN":
             return self.amount * converter[self.currency], "BYN"
         else:
-            return (self.amount / converter[self.currency]) * converter[to_currency], to_currency
+            return ((self.amount / converter[self.currency]) *
+                    converter[to_currency], to_currency)
 
 
 # Проверка
