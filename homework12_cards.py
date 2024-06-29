@@ -3,8 +3,10 @@
 # Колода карт
 #
 # Напишите программу которая содержит список карт,
-# умеет их перемешивать и позволяет пользователю достать карту из колоды по ее номеру.
-# Всего в колоде 54 карт. Класс Card содержит спискок номеров карт и список мастей.
+# умеет их перемешивать и позволяет пользователю достать карту
+# из колоды по ее номеру.
+# Всего в колоде 54 карт. Класс Card содержит спискок номеров
+# карт и список мастей.
 
 import random
 
@@ -23,8 +25,10 @@ class Card:
 
 class CardsDeck:
     def __init__(self):
-        self.cards = [Card(number, mast) for number in Card.number_list[:-1] for mast in Card.mast_list]
-        self.cards.extend([Card("Joker", None) for _ in range(2)])  # Добавляем двух джокеров
+        self.cards = [Card(number, mast) for number in Card.number_list[:-1]
+                      for mast in Card.mast_list]
+        self.cards.extend([Card("Joker", None) for _ in range(2)])
+        # Добавляем двух джокеров
 
     def shuffle(self):
         random.shuffle(self.cards)

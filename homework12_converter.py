@@ -12,12 +12,16 @@
 # petya = Person('EUR', 5)
 #
 # # Если валюта не задана, то конвертация происходит в BYN:
-# assert bank.exchange_currency(vasya.currency, vasya.amount) == (32.69, "BYN"), <error message>
-# assert bank.exchange_currency(petya.currency, petya.amount) == (35.20, "BYN"), <error message>
+# assert bank.exchange_currency(vasya.currency, vasya.amount) ==
+# (32.69, "BYN"), <error message>
+# assert bank.exchange_currency(petya.currency, petya.amount) ==
+# (35.20, "BYN"), <error message>
 #
 # # Конвертация в заданную валюту BYN:
-# assert bank.exchange_currency(vasya.currency, vasya.amount, 'EUR') == (9.29, "EUR"), <error message>
-# assert bank.exchange_currency(petya.currency, petya.amount, 'USD') == (10.76, "USD"), <error message>
+# assert bank.exchange_currency(vasya.currency, vasya.amount, 'EUR')==
+# (9.29, "EUR"), <error message>
+# assert bank.exchange_currency(petya.currency, petya.amount, 'USD') ==
+# (10.76, "USD"), <error message>
 
 
 from datetime import datetime
@@ -84,9 +88,13 @@ vasya = Currency("USD", 10)
 petya = Currency("EUR", 5)
 
 # Если валюта не задана, то конвертация происходит в BYN:
-assert Currency.exchange_currency(vasya.currency, vasya.amount) == (32.69, "BYN"), "Ошибка конвертации в BYN"
-assert Currency.exchange_currency(petya.currency, petya.amount) == (35.20, "BYN"), "Ошибка конвертации в BYN"
+assert (Currency.exchange_currency(vasya.currency, vasya.amount) ==
+        (32.69, "BYN")), "Ошибка конвертации в BYN"
+assert (Currency.exchange_currency(petya.currency, petya.amount) ==
+        (35.20, "BYN")), "Ошибка конвертации в BYN"
 
 # Конвертация в заданную валюту:
-assert Currency.exchange_currency(vasya.currency, vasya.amount) == (9.29, "EUR"), "Ошибка конвертации в EUR"
-assert Currency.exchange_currency(petya.currency, petya.amount) == (10.76, "USD"), "Ошибка конвертации в USD"
+assert (Currency.exchange_currency(vasya.currency, vasya.amount) ==
+        (9.29, "EUR")), "Ошибка конвертации в EUR"
+assert (Currency.exchange_currency(petya.currency, petya.amount) ==
+        (10.76, "USD")), "Ошибка конвертации в USD"
