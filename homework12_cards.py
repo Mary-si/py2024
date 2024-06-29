@@ -40,8 +40,7 @@ class CardsDeck:
         """выбор"""
         if 1 <= card_n <= 54:
             return self.cards[card_n - 1]
-        else:
-            return ValueError("Номер карты должен быть в диапазоне от 1 до 54")
+        return ValueError("Номер карты должен быть в диапазоне от 1 до 54")
 
 
 deck = CardsDeck()

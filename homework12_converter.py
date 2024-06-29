@@ -51,7 +51,7 @@ class Bank:  # pylint: disable=too-few-public-methods
 
     def calculate(self):
         """калькулятор """
-        for i in range(self.deposit_term_year * 12):
+        while range(self.deposit_term_year * 12):
             self.deposit_amount += (self.deposit_amount *
                                     (self.percent_deposit / 12))
         return self.deposit_amount
@@ -62,7 +62,7 @@ user_2 = Bank(5000, 3, 0.03)
 user_3 = Bank(2000, 1, 0.01)
 
 
-class Currency:
+class Currency:  # pylint: disable=too-few-public-methods
     """конвертер"""
     EUR = 3.520
     USD = 3.269
@@ -81,8 +81,7 @@ class Currency:
             return ValueError("Неподдерживаемая исходная валюта")
         if to_currency == "BYN":
             return self.amount * converter[self.currency], "BYN"
-        else:
-            return ((self.amount / converter[self.currency]) *
+        return ((self.amount / converter[self.currency]) *
                     converter[to_currency], to_currency)
 
 
