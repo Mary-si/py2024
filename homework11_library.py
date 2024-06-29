@@ -66,9 +66,11 @@ class User:
         if book.take():
             self.took_book = book
             print(f"Пользователь: {self.name} "
-                  f"{self.surname}, {self.__id_number}. Взял книгу: {book.title}")
+                  f"{self.surname}, {self.__id_number}."
+                  f"Взял книгу: {book.title}")
         else:
-            print(f"Книга ({book.title}) взята или зарезервирована пользователем: "
+            print(f"Книга ({book.title}) взята или"
+                  f"зарезервирована пользователем: "
                   f"{self.name} {self.surname}, {self.__id_number}")
 
     def return_book(self, book):
@@ -76,8 +78,9 @@ class User:
         if self.took_book == book:
             book.returned()
             self.took_book = None
-            print(f"Пользователь: {self.name} " 
-                  f"{self.surname}, {self.__id_number}. Вернул книгу: {book.title}")
+            print(f"Пользователь: {self.name}" 
+                  f"{self.surname}, {self.__id_number}."
+                  f"Вернул книгу: {book.title}")
         else:
             print(f"У пользователя {self.name} {self.surname},"
                   f"{self.__id_number} нет взятых книг")
@@ -86,7 +89,8 @@ class User:
         """когда зарезервировали книгу"""
         if book.reservation():
             print(f"Пользователь: {self.name} "
-                  f"{self.surname}, {self.__id_number}. Забронировал книгу: {book.title}")
+                  f"{self.surname}, {self.__id_number}."
+                  f"Забронировал книгу: {book.title}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)

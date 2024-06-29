@@ -16,12 +16,14 @@
 from datetime import datetime
 
 
-class Deposit:
+class Deposit:  # pylint: disable=too-few-public-methods
     """Инфорация депозитов"""
     # создаем методы класса
     def __init__(self, deposit_start_date, end_date_deposit):
-        self.deposit_start_date = datetime.strptime(deposit_start_date, "%d.%m.%Y")
-        self.end_date_deposit = datetime.strptime(end_date_deposit, "%d.%m.%Y")
+        self.deposit_start_date = datetime.strptime(deposit_start_date,
+                                                    "%d.%m.%Y")
+        self.end_date_deposit = datetime.strptime(end_date_deposit,
+                                                  "%d.%m.%Y")
 
 
 deposit_1 = Deposit("08.09.2021", "08.09.2025")
@@ -29,7 +31,7 @@ deposit_2 = Deposit("02.03.2022", "02.03.2025")
 deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 
-class Bank:
+class Bank:  # pylint: disable=too-few-public-methods
     """Инфорация о договорах пользователя"""
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
