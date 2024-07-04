@@ -54,7 +54,7 @@ class Bank:  # pylint: disable=too-few-public-methods
 
     def calculate(self):
         """калькулятор """
-        for i in range(self.deposit_term_year * 12):
+        for _ in range(self.deposit_term_year * 12):
             self.deposit_amount += (self.deposit_amount *
                                     (self.percent_deposit / 12))
         return self.deposit_amount
@@ -87,9 +87,8 @@ class Currency:  # pylint: disable=too-few-public-methods
             raise ValueError("Неподдерживаемая валюта")
         if to_currency is None or to_currency == "BYN":
             return self.amount * converter[self.currency], "BYN"
-        else:
-            return ((self.amount * converter[self.currency]) /
-                    converter[to_currency], to_currency)
+        return (self.amount * converter[self.currency] /
+                converter[to_currency], to_currency)
 
 
 # Проверка
@@ -104,8 +103,8 @@ assert (petya.exchange_currency() ==
 
 # Конвертация в заданную валюту:
 assert (vasya.exchange_currency("EUR") ==
-        (vasya.amount * Currency.USD / Currency.EUR, "EUR")),\
+        (vasya.amount * Currency.USD / Currency.EUR, "EUR")), \
     "Ошибка конвертации в EUR"
 assert (petya.exchange_currency("USD") ==
-        (petya.amount * Currency.EUR / Currency.USD, "USD")),\
+        (petya.amount * Currency.EUR / Currency.USD, "USD")), \
     "Ошибка конвертации в USD"
