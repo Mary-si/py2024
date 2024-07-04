@@ -79,7 +79,8 @@ class Currency:  # pylint: disable=too-few-public-methods
 
     def exchange_currency(self, to_currency=None):
         """конвертер"""
-        converter = {"USD": Currency.USD, "EUR": Currency.EUR, "BYN": Currency.EUR}
+        converter = {"USD": Currency.USD, "EUR": Currency.EUR,
+                     "BYN": Currency.EUR}
         if self.currency not in converter:
             raise ValueError("Неподдерживаемая валюта")
         if to_currency is not None and to_currency not in converter:
@@ -103,6 +104,8 @@ assert (petya.exchange_currency() ==
 
 # Конвертация в заданную валюту:
 assert (vasya.exchange_currency("EUR") ==
-        (vasya.amount * Currency.USD / Currency.EUR, "EUR")), "Ошибка конвертации в EUR"
+        (vasya.amount * Currency.USD / Currency.EUR, "EUR")),\
+    "Ошибка конвертации в EUR"
 assert (petya.exchange_currency("USD") ==
-        (petya.amount * Currency.EUR / Currency.USD, "USD")), "Ошибка конвертации в USD"
+        (petya.amount * Currency.EUR / Currency.USD, "USD")),\
+    "Ошибка конвертации в USD"
