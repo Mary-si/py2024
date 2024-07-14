@@ -66,7 +66,7 @@ class User:
         return self.__id_number
 
     def take_book(self, book):
-        """когда взяли книгу"""
+        """когда взяли книгу """
         if book.take():
             self.took_book = book
             print(f"Пользователь: {self.name} "
