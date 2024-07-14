@@ -61,6 +61,10 @@ class User:
         self.__id_number = id_number
         self.took_book = None
 
+    @property
+    def id_number(self):
+        return self.__id_number
+
     def take_book(self, book):
         """когда взяли книгу"""
         if book.take():
