@@ -37,7 +37,8 @@ class TestDeposit(unittest.TestCase):
     def test_deposit_start_date_is_datetime(self):
         """проверка что deposit_start_date это объект datetime"""
         self.assertIsInstance(self.deposit.deposit_start_date, datetime,
-                              "deposit_start_date должен быть объектом datetime")
+                              "deposit_start_date должен"
+                              "быть объектом datetime")
 
     def test_deposit_end_date_is_datetime(self):
         """проверка что deposit_end_date это объект datetime"""
@@ -58,14 +59,17 @@ class TestBank(unittest.TestCase):
     def test_calculate_correctness(self):
         """проверка корректности работы калькулятора"""
         expected_amount = 1000 * (1 + 0.01 / 12) ** 12
-        self.assertAlmostEqual(self.bank.calculate(), expected_amount, places=2,
-                               msg="Итоговая сумма депозита рассчитана неверно")
+        self.assertAlmostEqual(self.bank.calculate(),
+                               expected_amount, places=2,
+                               msg="Итоговая сумма"
+                                   "депозита рассчитана неверно")
 
     def test_calculate_zero_amount(self):
         """проверка на нулевые значения суммы депозита"""
         self.bank.deposit_amount = 0
         self.assertEqual(self.bank.calculate(), 0,
-                         "Итоговая сумма депозита должна быть 0 при нулевой сумме депозита")
+                         "Итоговая сумма депозита должна быть"
+                         "0 при нулевой сумме депозита")
 
 
 if __name__ == "__main__":

@@ -36,7 +36,8 @@ class TestBook(unittest.TestCase):
 
     def test_pages_is_integer(self):
         """проверка что pages это целое число"""
-        self.assertIsInstance(self.book.pages, int, "Количество страниц должно быть целым числом")
+        self.assertIsInstance(self.book.pages, int,
+                              "Количество страниц должно быть целым числом")
 
     def test_isbn_format(self):
         """проверка что ISBN имеет верный формат"""
@@ -47,7 +48,8 @@ class TestBook(unittest.TestCase):
     def test_isbn_contains_only_digits(self):
         """проверка что ISBN содержит только цифры"""
         digits_only = self.book.isbn.replace("-", "")
-        self.assertTrue(digits_only.isdigit(), "ISBN должен содержать только цифры")
+        self.assertTrue(digits_only.isdigit(),
+                        "ISBN должен содержать только цифры")
 
     def test_take_success(self):
         """проверка взятие книги, когда она доступна и не зарезервирована"""
@@ -58,7 +60,8 @@ class TestBook(unittest.TestCase):
         self.assertFalse(self.book.is_available)
 
     def test_take_fail_reserved(self):
-        """проверка взятие книги, когда она недоступна, т.е. уже зарезервирована"""
+        """проверка взятие книги, когда она недоступна,
+        т.е. уже зарезервирована"""
         self.book.is_available = False
         self.book.is_reserved = True
         result = self.book.take()
