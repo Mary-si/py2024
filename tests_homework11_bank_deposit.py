@@ -20,12 +20,12 @@
 
 
 import unittest
-from homework11_bank_deposit import Deposit, Bank
 from datetime import datetime
+from homework11_bank_deposit import Deposit, Bank
 
 
 class TestDeposit(unittest.TestCase):
-
+    """проверка депозитов"""
     def setUp(self):
         """проверка депозитов"""
         self.deposit = Deposit("01.01.2005", "01.01.2020")
@@ -46,6 +46,7 @@ class TestDeposit(unittest.TestCase):
 
 
 class TestBank(unittest.TestCase):
+    """поверка инфорации о договорах пользователя"""
     def setUp(self):
         """поверка инфорации о договорах пользователя"""
         self.bank = Bank(1000, 1, 0.01)
