@@ -11,36 +11,33 @@
 # (или которую уже кто-то читает - надо ему про это сказать).
 
 class Book:
-    """Инфорация о книгах"""
+    # атрибуты класса
+    all_book = 0
 
     # создаем методы класса
-    def __init__(self, title, author, pages, isbn):
+    def __init__(self, title, author, pages, isbn, flag="Available"):
         self.title = title
         self.author = author
         self.pages = pages
         self.isbn = isbn
-        self.is_available = True
-        self.is_reserved = False
+        self.flag = flag
+        Book.all_book += 1
+
+    def check_status_book(self):
+        """статус"""
+        return self.flag == "Available"
 
     def take(self):
-        """книга взята"""
-        if self.is_available and not self.is_reserved:
-            self.is_available = False
-            return True
-        return False
+        """статус"""
+        self.flag = "Took"
 
     def returned(self):
-        """книга возвращена"""
-        self.is_available = True
-        self.is_reserved = False
-        return True
+        """статус"""
+        self.flag = "Available"
 
     def reservation(self):
-        """книга забронирована"""
-        if self.is_available and not self.is_reserved:
-            self.is_reserved = True
-            return True
-        return False
+        """статус"""
+        self.flag = "Reservation"
 
 
 book_1 = Book("Tree", "Thomas Wyatt", 180,
@@ -52,7 +49,8 @@ book_3 = Book("Cat", "Leo Rangell", 300,
 
 
 class User:
-    """Информация о пользователях"""
+    # атрибуты класса
+    all_user = 0
 
     # создаем методы класса
     def __init__(self, name, surname, id_number):
@@ -60,42 +58,36 @@ class User:
         self.surname = surname
         self.__id_number = id_number
         self.took_book = None
-
-    @property
-    def id_number(self):
-        """id_number"""
-        return self.__id_number
+        self.returned_book = None
+        self.reservated_book = None
+        User.all_user += 1
 
     def take_book(self, book):
-        """когда взяли книгу """
-        if book.take():
+        """когда взяли книгу"""
+        if book.check_status_book():
             self.took_book = book
-            print(f"Пользователь: {self.name} "
-                  f"{self.surname}, {self.__id_number}."
-                  f"Взял книгу: {book.title}")
+            book.take()
+            print(f"Пользователь взялл книгу: {self.name}"
+                  f"{self.surname} {self.__id_number}")
         else:
-            print(f"Книга ({book.title}) взята или"
-                  f"зарезервирована пользователем: "
-                  f"{self.name} {self.surname}, {self.__id_number}")
+            print(f"Книга взята или зарезервирована пользователем")
 
     def return_book(self, book):
         """когда вернули книгу"""
         if self.took_book == book:
             book.returned()
-            self.took_book = None
-            print(f"Пользователь: {self.name}"
-                  f"{self.surname}, {self.__id_number}."
-                  f"Вернул книгу: {book.title}")
+            print(f"Пользователь вернул книгу: {self.name},"
+                  f"{self.surname}, {self.__id_number}")
         else:
-            print(f"У пользователя {self.name} {self.surname},"
-                  f"{self.__id_number} нет взятых книг")
+            print(f"У пользователя нет взятых книг")
 
     def reservation_book(self, book):
         """когда зарезервировали книгу"""
-        if book.reservation():
-            print(f"Пользователь: {self.name} "
-                  f"{self.surname}, {self.__id_number}."
-                  f"Забронировал книгу: {book.title}")
+        if book.check_status_book():
+            self.reservated_book = book
+            book.reservation()
+            print(f"Пользователь забронировал книгу: {self.name},"
+                  f"{self.surname}, {self.__id_number}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)
