@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b3f23b-5b2b-4e22-b623-05cb89b43b52" name="Changes" comment="homework14">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ruff.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ruff.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework11_bank_deposit.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework11_bank_deposit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework11_library.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework11_library.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/__name__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/homework11_bank_deposit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/homework11_library.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_homework21_library_pytest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/homework14" />
+        <entry key="$PROJECT_DIR$" value="feature/homework18" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,48 +66,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.claa10.executor&quot;: &quot;Run&quot;,
-    &quot;Python.class11.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_ positive_fun_arg.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_ positive_func_args.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_caching_func.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_positive_fun_arg.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_return_number.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework10_type_decorator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework11_bank_deposit.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework11_library.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework12_cards.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework12_converter.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework12_molecules.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework14_calculator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework14_file.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework7.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework7_bulls_and_cows.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework7_pyramid.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework7_statues.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework8_opposite_number.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework8_subsequence.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework8_validate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework9_candles.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework9_counting_the_number_of_letters.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework9_strings_with_character.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework9_symbo1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.homework9_symbol.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/homework11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Mary/Documents/py2024&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_homework21_library_pytest.test_book_status.executor": "Run",
+    "Python tests.Python tests for tests_homework21_library_pytest.test_reservation_success.executor": "Run",
+    "Python tests.Python tests for tests_homework21_library_pytest.test_take_book.executor": "Run",
+    "Python tests.Python tests in test_homework21_bank_deposit_pytest.py.executor": "Run",
+    "Python tests.Python tests in test_homework21_library_pytest.py.executor": "Run",
+    "Python tests.Python tests in tests_homework21_bank_deposit_pytest.py.executor": "Run",
+    "Python tests.Python tests in tests_homework21_library_pytest.py.executor": "Run",
+    "Python.claa10.executor": "Run",
+    "Python.class11.executor": "Run",
+    "Python.custom_logger.executor": "Run",
+    "Python.homework10_ positive_fun_arg.executor": "Run",
+    "Python.homework10_ positive_func_args.executor": "Run",
+    "Python.homework10_1.executor": "Run",
+    "Python.homework10_caching_func.executor": "Run",
+    "Python.homework10_positive_fun_arg.executor": "Run",
+    "Python.homework10_return_number.executor": "Run",
+    "Python.homework10_type_decorator.executor": "Run",
+    "Python.homework11_bank_deposit.executor": "Run",
+    "Python.homework11_library.executor": "Run",
+    "Python.homework12_cards.executor": "Run",
+    "Python.homework12_converter.executor": "Run",
+    "Python.homework12_molecules.executor": "Run",
+    "Python.homework14_calculator.executor": "Run",
+    "Python.homework14_file.executor": "Run",
+    "Python.homework7.executor": "Run",
+    "Python.homework7_bulls_and_cows.executor": "Run",
+    "Python.homework7_pyramid.executor": "Run",
+    "Python.homework7_statues.executor": "Run",
+    "Python.homework8_opposite_number.executor": "Run",
+    "Python.homework8_subsequence.executor": "Run",
+    "Python.homework8_validate.executor": "Run",
+    "Python.homework9_candles.executor": "Run",
+    "Python.homework9_counting_the_number_of_letters.executor": "Run",
+    "Python.homework9_strings_with_character.executor": "Run",
+    "Python.homework9_symbo1.executor": "Run",
+    "Python.homework9_symbol.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/homework21",
+    "last_opened_file_path": "/Users/Mary/Documents/py2024/source"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.homework11_library">
-    <configuration name="homework10_return_number" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for test_homework21_library_pytest.test_book_status">
+    <configuration name="__name__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,11 +128,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework10_return_number.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logs/__name__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,101 +141,73 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="homework10_type_decorator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_homework21_library_pytest.test_book_status" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework10_type_decorator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_homework21_library_pytest.test_book_status&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="homework11_bank_deposit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_homework21_library_pytest.test_take_book" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework11_bank_deposit.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_homework21_library_pytest.test_take_book&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="homework11_library" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_homework21_bank_deposit_pytest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework11_library.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="homework14_calculator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_homework21_library_pytest.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/homework14_calculator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_homework21_library_pytest.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.homework11_library" />
-        <item itemvalue="Python.homework11_bank_deposit" />
-        <item itemvalue="Python.homework10_type_decorator" />
-        <item itemvalue="Python.homework10_return_number" />
-        <item itemvalue="Python.homework14_calculator" />
+        <item itemvalue="Python tests.Python tests for test_homework21_library_pytest.test_book_status" />
+        <item itemvalue="Python tests.Python tests in test_homework21_bank_deposit_pytest.py" />
+        <item itemvalue="Python.__name__" />
+        <item itemvalue="Python tests.Python tests in test_homework21_library_pytest.py" />
+        <item itemvalue="Python tests.Python tests for tests.test_homework21_library_pytest.test_take_book" />
       </list>
     </recent_temporary>
   </component>
