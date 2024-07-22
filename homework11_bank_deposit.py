@@ -16,7 +16,7 @@
 from datetime import datetime
 
 
-class Deposit:  # pylint: disable=too-few-public-methods
+class Deposit:
     """Инфорация депозитов"""
     # создаем методы класса
     def __init__(self, deposit_start_date, end_date_deposit):
