@@ -8,3 +8,4 @@ pytest-html
 loguru
 logging
 numpy~=2.0.1
+simpleeval
