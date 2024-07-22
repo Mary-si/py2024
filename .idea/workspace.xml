@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7b3f23b-5b2b-4e22-b623-05cb89b43b52" name="Changes" comment="homework14">
-      <change afterPath="$PROJECT_DIR$/logs/__name__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/homework11_bank_deposit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/homework11_library.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_homework21_library_pytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="a7b3f23b-5b2b-4e22-b623-05cb89b43b52" name="Changes" comment="homework21">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/__name__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logs/__name__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount.executor": "Run",
     "Python tests.Python tests for test_homework21_library_pytest.test_book_status.executor": "Run",
     "Python tests.Python tests for tests_homework21_library_pytest.test_reservation_success.executor": "Run",
     "Python tests.Python tests for tests_homework21_library_pytest.test_take_book.executor": "Run",
@@ -106,11 +104,12 @@
     "Python.homework9_symbol.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/homework21",
-    "last_opened_file_path": "/Users/Mary/Documents/py2024/source"
+    "last_opened_file_path": "/Users/Mary/Documents/py2024/report"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/report" />
       <recent name="$PROJECT_DIR$/source" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -118,7 +117,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_homework21_library_pytest.test_book_status">
+  <component name="RunManager" selected="Python tests.Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount">
     <configuration name="__name__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
@@ -141,6 +140,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="py2024" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_homework21_bank_deposit_pytest.test_calculate_zero_amount&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_homework21_library_pytest.test_book_status" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="py2024" />
       <option name="ENV_FILES" value="" />
@@ -153,21 +167,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_homework21_library_pytest.test_book_status&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for tests.test_homework21_library_pytest.test_take_book" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="py2024" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_homework21_library_pytest.test_take_book&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -203,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount" />
         <item itemvalue="Python tests.Python tests for test_homework21_library_pytest.test_book_status" />
         <item itemvalue="Python tests.Python tests in test_homework21_bank_deposit_pytest.py" />
         <item itemvalue="Python.__name__" />
         <item itemvalue="Python tests.Python tests in test_homework21_library_pytest.py" />
-        <item itemvalue="Python tests.Python tests for tests.test_homework21_library_pytest.test_take_book" />
       </list>
     </recent_temporary>
   </component>
@@ -226,38 +225,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716548687784</updated>
-    </task>
-    <task id="LOCAL-00029" summary="homework9">
-      <option name="closed" value="true" />
-      <created>1717520556609</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1717520556610</updated>
-    </task>
-    <task id="LOCAL-00030" summary="homework9">
-      <option name="closed" value="true" />
-      <created>1717520763429</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1717520763429</updated>
-    </task>
-    <task id="LOCAL-00031" summary="homework10">
-      <option name="closed" value="true" />
-      <created>1717682410119</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1717682410119</updated>
-    </task>
-    <task id="LOCAL-00032" summary="homework10">
-      <option name="closed" value="true" />
-      <created>1717682621360</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1717682621360</updated>
     </task>
     <task id="LOCAL-00033" summary="homework10">
       <option name="closed" value="true" />
@@ -619,7 +586,39 @@
       <option name="project" value="LOCAL" />
       <updated>1718828166952</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="homework21">
+      <option name="closed" value="true" />
+      <created>1721657093299</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1721657093299</updated>
+    </task>
+    <task id="LOCAL-00079" summary="homework21">
+      <option name="closed" value="true" />
+      <created>1721657217532</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1721657217532</updated>
+    </task>
+    <task id="LOCAL-00080" summary="homework21">
+      <option name="closed" value="true" />
+      <created>1721657300876</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1721657300876</updated>
+    </task>
+    <task id="LOCAL-00081" summary="homework21">
+      <option name="closed" value="true" />
+      <created>1721657484038</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1721657484038</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -641,6 +640,7 @@
     <MESSAGE value="homework11" />
     <MESSAGE value="homework9" />
     <MESSAGE value="homework14" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework14" />
+    <MESSAGE value="homework21" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework21" />
   </component>
 </project>

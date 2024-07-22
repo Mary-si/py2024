@@ -21,7 +21,8 @@
 # https://pytest-with-eric.com/plugins/pytest-html/
 # Тесты запускаются с помощью pytest
 # Добавьте в файл .gitignore все файлы и папки которые генерирует
-# в процессе своей работы pytest и pytest-html, те в репозитории с кодом не должно быть лишних файлов
+# в процессе своей работы pytest и pytest-html,
+# те в репозитории с кодом не должно быть лишних файлов
 #
 # Есть возможность запустить тесты с разным уровнем логгирования без изменения кода
 # (те передача уровня логгирования во время запуска тестов)
@@ -48,11 +49,11 @@
 import pytest
 import numpy as np
 from datetime import datetime
-from homework11_bank_deposit import Deposit, Bank
 import logging
 import sys
 import os
-
+from unittest import TestCase
+from homework11_bank_deposit import Deposit, Bank
 
 # Добавление пути к модулям
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
@@ -77,12 +78,13 @@ def bank():
 
 @pytest.fixture
 def almostequal():
+    """almostequal"""
     return np.testing.assert_almost_equal
 
 
 @pytest.fixture
 def equal():
-    from unittest import TestCase
+    """equal"""
     return TestCase().assertEqual
 
 
