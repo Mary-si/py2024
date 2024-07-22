@@ -3,3 +3,8 @@ pycodestyle
 mypy
 ruff
 pylint
+pytest~=8.2.2
+pytest-html
+loguru
+logging
+numpy~=2.0.1
