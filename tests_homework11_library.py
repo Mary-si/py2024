@@ -124,7 +124,6 @@ class TestUser(unittest.TestCase):
         del self.user
         del self.book
 
-
     def test_take_book(self):
         """книга взята пользователем и статус книги изменен"""
         self.user.take_book(self.book)
