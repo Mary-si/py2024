@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b3f23b-5b2b-4e22-b623-05cb89b43b52" name="Changes" comment="homework21">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pylint.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pylint.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/__name__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logs/__name__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_homework21_bank_deposit_pytest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount" />
-        <item itemvalue="Python tests.Python tests for test_homework21_library_pytest.test_book_status" />
-        <item itemvalue="Python tests.Python tests in test_homework21_bank_deposit_pytest.py" />
-        <item itemvalue="Python.__name__" />
         <item itemvalue="Python tests.Python tests in test_homework21_library_pytest.py" />
+        <item itemvalue="Python tests.Python tests in test_homework21_bank_deposit_pytest.py" />
+        <item itemvalue="Python tests.Python tests for test_homework21_library_pytest.test_book_status" />
+        <item itemvalue="Python tests.Python tests for test_homework21_bank_deposit_pytest.test_calculate_zero_amount" />
+        <item itemvalue="Python.__name__" />
       </list>
     </recent_temporary>
   </component>
@@ -225,14 +223,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1716548687784</updated>
-    </task>
-    <task id="LOCAL-00033" summary="homework10">
-      <option name="closed" value="true" />
-      <created>1717682860396</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1717682860396</updated>
     </task>
     <task id="LOCAL-00034" summary="homework10">
       <option name="closed" value="true" />
@@ -618,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721657484038</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="homework21">
+      <option name="closed" value="true" />
+      <created>1721776277581</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1721776277581</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -640,6 +638,7 @@
     <MESSAGE value="homework11" />
     <MESSAGE value="homework9" />
     <MESSAGE value="homework14" />
+    <MESSAGE value="homework22" />
     <MESSAGE value="homework21" />
     <option name="LAST_COMMIT_MESSAGE" value="homework21" />
   </component>
