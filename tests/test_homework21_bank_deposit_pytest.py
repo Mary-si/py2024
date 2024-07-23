@@ -56,10 +56,12 @@ from unittest import TestCase
 from homework11_bank_deposit import Deposit, Bank
 
 # Добавление пути к модулям
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
+sys.path.insert(0, os.path.abspath(os.path.join
+                                   (os.path.dirname(__file__), '../source')))
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s",
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s - %(levelname)s - %(message)s",
                     filename="test_homework21_bank_deposit_pytest.log", filemode='w')
 logger = logging.getLogger(__name__)
 
