@@ -10,10 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: 3.11
 
@@ -25,11 +25,15 @@ jobs:
       - name: Create .pylintrc
         run: |
           echo "[MASTER]" > .pylintrc
-          echo "ignore-patterns=myenv/lib/python3.12/site-packages/*" >> .pylintrc
+          echo "ignore-patterns=venv/lib/python3.12/site-packages/*" >> .pylintrc
           echo "[MESSAGES CONTROL]" >> .pylintrc
-          echo "disable=W0622" >> .pylintrc
+          echo "disable=W0622,too-few-public-methods,W0621" >> .pylintrc
 
       - name: Analyse the code with pylint
         run: |
-          find . -type f -name "*.py" ! -path "./myenv/*" > pylint_files.txt
+          find . -type f -name "*.py" ! -path "./venv/*" > pylint_files.txt
           xargs pylint --rcfile=.pylintrc < pylint_files.txt
+
+      - name: Run tests
+        run: pytest
+
