@@ -46,18 +46,17 @@
 # Note2: Названия файлов примерное
 
 
-import pytest
-import numpy as np
-from datetime import datetime
-import logging
 import sys
 import os
+import logging
+from datetime import datetime
 from unittest import TestCase
+import pytest
+import numpy as np
 from homework11_bank_deposit import Deposit, Bank
 
 # Добавление пути к модулям
-sys.path.insert(0, os.path.abspath(os.path.join
-                                   (os.path.dirname(__file__), '../source')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO,
