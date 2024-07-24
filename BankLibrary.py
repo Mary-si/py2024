@@ -10,9 +10,11 @@ class BankLibrary:
         return Deposit(deposit_start_date, end_date_deposit)
 
     @staticmethod
-    def create_bank_account(deposit_amount, deposit_term_year, percent_deposit):
+    def create_bank_account(deposit_amount,
+                            deposit_term_year, percent_deposit):
         """Создает экземпляр банковского счета и возвращает его."""
-        return Bank(float(deposit_amount), int(deposit_term_year), float(percent_deposit))
+        return Bank(float(deposit_amount),
+                    int(deposit_term_year), float(percent_deposit))
 
     @staticmethod
     def calculate_final_amount(bank_account):
