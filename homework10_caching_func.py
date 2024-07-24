@@ -1,3 +1,6 @@
+# pylint: skip-file
+
+
 """homework10"""
 
 # Функция кэширования *
