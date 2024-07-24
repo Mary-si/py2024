@@ -32,8 +32,8 @@
 
 
 def cache(func):
-    """кэширует результаты вызова функции,
-    возвращает закэшированное значение """
+    """Кэширует результаты вызова функции
+    и возвращает закэшированное значение."""
     cache_number = {}
 
     def wrapper(*args):
@@ -47,13 +47,13 @@ def cache(func):
 
 @cache
 def fibonacci(n):
-    """выполнение """
+    """Вычисляет n-ное число Фибоначчи."""
     if n <= 1:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 # Проверка
-print(fibonacci(5))  # Вывод: 5
+print(fibonacci(5))   # Вывод: 5
 print(fibonacci(10))  # Вывод: 55
-print(fibonacci(5))  # Вывод: 5 (значение взято из кэша)
+print(fibonacci(5))   # Вывод: 5 (значение взято из кэша)
