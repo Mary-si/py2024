@@ -31,4 +31,5 @@ jobs:
 
       - name: Analyse the code with pylint
         run: |
-          pylint --rcfile=.pylintrc $(git ls-files '*.py')
+          find . -type f -name "*.py" ! -path "./myenv/*" > pylint_files.txt
+          xargs pylint --rcfile=.pylintrc < pylint_files.txt
