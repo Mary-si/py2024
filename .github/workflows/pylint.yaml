@@ -25,19 +25,9 @@ jobs:
       - name: Create .pylintrc
         run: |
           echo "[MASTER]" > .pylintrc
-          echo "ignore=_pytest/_code/code.py,another_folder/*.py" >> .pylintrc
+          echo "ignore=site-packages" >> .pylintrc
           echo "[MESSAGES CONTROL]" >> .pylintrc
-          echo "disable=W0622,another_warning_code" >> .pylintrc
-          echo "ignore=**/myenv/lib/python3.12/site-packages/pip/_vendor/idna/uts46data.py" >> .pylintrc
-          echo "ignore=**/myenv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/python.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/pygments/formatters/latex.py,**/myenv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/python.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/platformdirs/macos.py,**/myenv/lib/python3.12/site-packages/pip/_vendor/pygments/formatters/latex.py,**/myenv/lib/python3.12/site-packages/pip/_vendor/pygments/lexers/python.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/rich/traceback.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/rich/text.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/rich/table.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/rich/progress.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/pip/_vendor/rich/pretty.py" >> .pylintrc
-          echo "ignore-patterns=**/myenv/lib/python3.12/site-packages/" >> .pylintrc
+          echo "disable=W0622" >> .pylintrc
 
       - name: Analyse the code with pylint
         run: |
