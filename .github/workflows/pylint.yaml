@@ -17,21 +17,33 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Check if virtual environment exists
+        id: check_venv
+        run: echo "Exists" && test -d venv && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+
+      - name: Create virtual environment
+        if: steps.check_venv.outputs.exists != 'true'
+        run: python -m venv venv
+
+      - name: Activate virtual environment
+        run: source venv/bin/activate
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pylint pytest numpy
 
-      - name: Create .pylintrc
+      - name: Create .pylintrc if not exists
         run: |
-          echo "[MASTER]" > .pylintrc
-          echo "ignore-patterns=myenv" >> .pylintrc
-          echo "[MESSAGES CONTROL]" >> .pylintrc
-          echo "disable=W0622,too-few-public-methods,W0621" >> .pylintrc
+          if [ ! -f .pylintrc ]; then
+            echo "[MASTER]" > .pylintrc
+            echo "ignore-patterns=myenv" >> .pylintrc
+            echo "[MESSAGES CONTROL]" >> .pylintrc
+            echo "disable=W0622,too-few-public-methods,W0621" >> .pylintrc
+          fi
 
       - name: Analyse the code with pylint
-        run: |
-          pylint . --rcfile=.pylintrc
+        run: pylint . --rcfile=.pylintrc
 
       - name: Run tests
         run: pytest
