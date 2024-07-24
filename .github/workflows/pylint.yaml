@@ -1,7 +1,5 @@
 name: Pylint
 
-#"""Здесь докстринг класса"""
-
 on:
   workflow_dispatch:
   pull_request:
@@ -27,14 +25,13 @@ jobs:
       - name: Create .pylintrc
         run: |
           echo "[MASTER]" > .pylintrc
-          echo "ignore-patterns=myenv/lib/python3.12/site-packages/*" >> .pylintrc
+          echo "ignore-patterns=myenv" >> .pylintrc
           echo "[MESSAGES CONTROL]" >> .pylintrc
           echo "disable=W0622,too-few-public-methods,W0621" >> .pylintrc
 
       - name: Analyse the code with pylint
         run: |
-          find . -type f -name "*.py" ! -path "./myenv/*" > pylint_files.txt
-          xargs pylint --rcfile=.pylintrc < pylint_files.txt
+          pylint . --rcfile=.pylintrc
 
       - name: Run tests
         run: pytest
