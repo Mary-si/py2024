@@ -64,25 +64,30 @@ logging.basicConfig(level=logging.INFO,
                     filename="test_homework21_bank_deposit_pytest.log", filemode='w')
 logger = logging.getLogger(__name__)
 
+
 @pytest.fixture
 def deposit_fixture():
     """информация о депозитах"""
     return Deposit("01.02.2020", "01.02.2022")
+
 
 @pytest.fixture
 def bank_fixture():
     """информация о договорах пользователя"""
     return Bank(10, 2, 0.05)
 
+
 @pytest.fixture
 def almostequal_fixture():
     """almostequal"""
     return np.testing.assert_almost_equal
 
+
 @pytest.fixture
 def equal_fixture():
     """equal"""
     return TestCase().assertEqual
+
 
 def test_deposit_start_date_is_datetime(deposit_fixture):
     """проверка что deposit_start_date это объект datetime"""
@@ -90,17 +95,20 @@ def test_deposit_start_date_is_datetime(deposit_fixture):
     assert isinstance(deposit_fixture.deposit_start_date, datetime), \
         "deposit_start_date должен быть объектом datetime"
 
+
 def test_deposit_end_date_is_datetime(deposit_fixture):
     """проверка что deposit_end_date это объект datetime"""
     logger.info("Проверка что deposit_end_date это объект datetime")
     assert isinstance(deposit_fixture.end_date_deposit, datetime), \
         "deposit_end_date должен быть объектом datetime"
 
+
 def test_calculate_correctness(bank_fixture, almostequal_fixture):
     """проверка корректности работы калькулятора"""
     logger.info("Проверка корректности работы калькулятора")
     expected_amount = 10 * (1 + 0.05 / 12) ** (2 * 12)
     almostequal_fixture(bank_fixture.calculate(), expected_amount, decimal=2)
+
 
 def test_calculate_zero_amount(bank_fixture, equal_fixture):
     """проверка на нулевые значения суммы депозита"""
