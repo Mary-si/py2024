@@ -1,5 +1,6 @@
 """
-Этот модуль запускает тесты для bank_deposit и library, и генерирует HTML отчеты.
+Этот модуль запускает тесты для bank_deposit
+и library, и генерирует HTML отчеты.
 """
 
 from pytest import main

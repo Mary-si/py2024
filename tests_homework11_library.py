@@ -124,24 +124,6 @@ class TestUser(unittest.TestCase):
         del self.user
         del self.book
 
-# как тут делать если в задаче отбражается так:
-#
-# def __init__(self, name, surname, id_number):
-#     self.name = name
-#     self.surname = surname
-#     self.__id_number = id_number
-#     self.took_book = None
-
-    # def test_id_number(self):
-    #     """проверка что id_number содержит только цифры"""
-    #     self.assertTrue(self.user.id_number.isdigit(),
-    #                     "id_number должен содержать только цифры")
-    #
-    # def test_id_number_format(self):
-    #     """проверка что id_number состоит из 7 цифр"""
-    #     self.assertEqual(len(self.user.id_number), 7,
-    #                      "id_number должен состоять из 7 цифр")
-
     def test_take_book(self):
         """книга взята пользователем и статус книги изменен"""
         self.user.take_book(self.book)
