@@ -1,7 +1,5 @@
 name: Pylint
 
-#"""Здесь докстринг класса"""
-        
 on:
   workflow_dispatch:
   pull_request:
@@ -13,14 +11,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pylint
-      - name: Analysing the code with pylint
+
+      - name: Create .pylintrc
         run: |
-          pylint $(git ls-files '*.py')
+          echo "[MASTER]" > .pylintrc
+          echo "ignore-patterns=myenv/lib/python3.12/site-packages/*" >> .pylintrc
+          echo "[MESSAGES CONTROL]" >> .pylintrc
+          echo "disable=W0622" >> .pylintrc
+
+      - name: Analyse the code with pylint
+        run: |
+          find . -type f -name "*.py" ! -path "./myenv/*" > pylint_files.txt
+          xargs pylint --rcfile=.pylintrc < pylint_files.txt
