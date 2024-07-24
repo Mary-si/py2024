@@ -60,9 +60,12 @@ class TestBank(unittest.TestCase):
     def test_calculate_correctness(self):
         """проверка корректности работы калькулятора"""
         expected_amount = 1000 * (1 + 0.01 / 12) ** 12
-        self.assertAlmostEqual(self.bank.calculate(),
-                               expected_amount, places=2, msg="Итоговая сумма "
-                                                              "депозита рассчитана неверно")
+        self.assertAlmostEqual(
+            self.bank.calculate(),
+            expected_amount,
+            places=2,
+            msg="Итоговая сумма депозита рассчитана неверно"
+        )
 
     def test_calculate_zero_amount(self):
         """проверка на нулевые значения суммы депозита"""

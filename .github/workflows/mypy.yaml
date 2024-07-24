@@ -27,4 +27,4 @@ jobs:
 
       - name: Analysing the code with mypy
         run: |
-          mypy --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache --exclude venv .
+          mypy --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache --explicit-package-bases .

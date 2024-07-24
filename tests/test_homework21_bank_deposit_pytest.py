@@ -41,7 +41,8 @@
 # requirements.txt
 # ...
 # Note: Помимо кода, пулл реквест должен содержать в себе файл-репорт
-# (прикрепленный к пулл реквесту) который генерируется по результатам запуска тестов.
+# (прикрепленный к пулл реквесту)
+# который генерируется по результатам запуска тестов.
 #
 # Note2: Названия файлов примерное
 
@@ -56,12 +57,20 @@ import numpy as np
 from homework11_bank_deposit import Deposit, Bank
 
 # Добавление пути к модулям
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
+sys.path.insert(
+    0,
+    os.path.abspath(
+        os.path.join(os.path.dirname(__file__), "../source")
+    )
+)
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO,
-                    format="%(asctime)s - %(levelname)s - %(message)s",
-                    filename="test_homework21_bank_deposit_pytest.log", filemode='w')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filename="test_homework21_bank_deposit_pytest.log",
+    filemode='w'
+)
 logger = logging.getLogger(__name__)
 
 
