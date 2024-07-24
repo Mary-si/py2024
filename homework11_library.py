@@ -1,3 +1,5 @@
+# pylint: disable=R0801
+
 """homework11"""
 
 
