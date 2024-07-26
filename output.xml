@@ -1,121 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-24T01:43:37.154029" rpa="false" schemaversion="5">
-<suite id="s1" name="BankTests" source="/Users/Mary/Documents/py2024/tests/BankTests.robot">
-<test id="s1-t1" name="Test Deposit Creation" line="13">
-<kw name="Create Deposit" owner="BankLibrary">
-<msg time="2024-07-24T01:43:37.174972" level="INFO">${deposit} = &lt;homework11_bank_deposit.Deposit object at 0x1045bd2e0&gt;</msg>
-<var>${deposit}</var>
-<arg>${DEPOSIT_START_DATE}</arg>
-<arg>${DEPOSIT_END_DATE}</arg>
-<doc>Создает экземпляр депозита и возвращает его.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.174839" elapsed="0.000150"/>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-07-26T23:14:51.192886" rpa="false" schemaversion="5">
+<suite id="s1" name="BookTests" source="/Users/Mary/Documents/py2024/tests/BookTests.robot">
+<test id="s1-t1" name="Test Book Creation" line="5">
+<kw name="Create Book">
+<msg time="2024-07-26T23:14:51.209006" level="FAIL">No keyword with name 'Create Book' found.</msg>
+<var>${book}</var>
+<arg>Title</arg>
+<arg>Author</arg>
+<arg>200</arg>
+<arg>123456789</arg>
+<status status="FAIL" start="2024-07-26T23:14:51.208990" elapsed="0.000042">No keyword with name 'Create Book' found.</status>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${deposit.deposit_start_date.strftime('%d.%m.%Y')}</arg>
-<arg>${DEPOSIT_START_DATE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.175068" elapsed="0.000249"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${deposit.end_date_deposit.strftime('%d.%m.%Y')}</arg>
-<arg>${DEPOSIT_END_DATE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.175375" elapsed="0.000182"/>
-</kw>
-<status status="PASS" start="2024-07-24T01:43:37.174559" elapsed="0.001049"/>
+<status status="FAIL" start="2024-07-26T23:14:51.208476" elapsed="0.000646">No keyword with name 'Create Book' found.</status>
 </test>
-<test id="s1-t2" name="Test Bank Account Creation" line="18">
-<kw name="Create Bank Account" owner="BankLibrary">
-<msg time="2024-07-24T01:43:37.175873" level="INFO">${bank_account} = &lt;homework11_bank_deposit.Bank object at 0x1045bd970&gt;</msg>
-<var>${bank_account}</var>
-<arg>${DEPOSIT_AMOUNT}</arg>
-<arg>${DEPOSIT_TERM_YEAR}</arg>
-<arg>${PERCENT_DEPOSIT}</arg>
-<doc>Создает экземпляр банковского счета и возвращает его.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.175792" elapsed="0.000092"/>
+<test id="s1-t2" name="Test Book Take" line="8">
+<kw name="Create User">
+<msg time="2024-07-26T23:14:51.209566" level="FAIL">No keyword with name 'Create User' found.</msg>
+<var>${user}</var>
+<arg>John</arg>
+<arg>Doe</arg>
+<arg>12345</arg>
+<status status="FAIL" start="2024-07-26T23:14:51.209554" elapsed="0.000025">No keyword with name 'Create User' found.</status>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.176625" level="INFO">Argument types are:
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${bank_account.deposit_amount}</arg>
-<arg>${DEPOSIT_AMOUNT}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.175935" elapsed="0.000715"/>
+<kw name="Create Book">
+<var>${book}</var>
+<arg>Title</arg>
+<arg>Author</arg>
+<arg>200</arg>
+<arg>123456789</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.209641" elapsed="0.000007"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.176859" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${bank_account.deposit_term_year}</arg>
-<arg>${DEPOSIT_TERM_YEAR}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.176703" elapsed="0.000176"/>
+<kw name="Take Book">
+<arg>${user}</arg>
+<arg>${book}</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.209696" elapsed="0.000006"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.177071" level="INFO">Argument types are:
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${bank_account.percent_deposit}</arg>
-<arg>${PERCENT_DEPOSIT}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.176926" elapsed="0.000164"/>
-</kw>
-<status status="PASS" start="2024-07-24T01:43:37.175690" elapsed="0.001446"/>
+<status status="FAIL" start="2024-07-26T23:14:51.209202" elapsed="0.000555">No keyword with name 'Create User' found.</status>
 </test>
-<test id="s1-t3" name="Test Bank Account Calculation" line="24">
-<kw name="Create Bank Account" owner="BankLibrary">
-<msg time="2024-07-24T01:43:37.177381" level="INFO">${bank_account} = &lt;homework11_bank_deposit.Bank object at 0x1045be510&gt;</msg>
-<var>${bank_account}</var>
-<arg>${DEPOSIT_AMOUNT}</arg>
-<arg>${DEPOSIT_TERM_YEAR}</arg>
-<arg>${PERCENT_DEPOSIT}</arg>
-<doc>Создает экземпляр банковского счета и возвращает его.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.177304" elapsed="0.000087"/>
+<test id="s1-t3" name="Test Book Return" line="13">
+<kw name="Create User">
+<msg time="2024-07-26T23:14:51.210167" level="FAIL">No keyword with name 'Create User' found.</msg>
+<var>${user}</var>
+<arg>John</arg>
+<arg>Doe</arg>
+<arg>12345</arg>
+<status status="FAIL" start="2024-07-26T23:14:51.210158" elapsed="0.000021">No keyword with name 'Create User' found.</status>
 </kw>
-<kw name="Calculate Final Amount" owner="BankLibrary">
-<msg time="2024-07-24T01:43:37.177489" level="INFO">${final_amount} = 24417.907100508397</msg>
-<var>${final_amount}</var>
-<arg>${bank_account}</arg>
-<doc>Выполняет расчет итоговой суммы на банковском счете.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.177437" elapsed="0.000059"/>
+<kw name="Create Book">
+<var>${book}</var>
+<arg>Title</arg>
+<arg>Author</arg>
+<arg>200</arg>
+<arg>123456789</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.210226" elapsed="0.000005"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.177594" level="INFO">The final amount after 4 years is 24417.907100508397</msg>
-<arg>The final amount after ${DEPOSIT_TERM_YEAR} years is ${final_amount}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.177540" elapsed="0.000067"/>
+<kw name="Take Book">
+<arg>${user}</arg>
+<arg>${book}</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.210270" elapsed="0.000005"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.177725" level="INFO">${expected_final_amount} = 24417.91</msg>
-<var>${expected_final_amount}</var>
-<arg>round(${final_amount}, 2)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.177649" elapsed="0.000083"/>
+<kw name="Return Book">
+<arg>${user}</arg>
+<arg>${book}</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.210309" elapsed="0.000005"/>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-07-24T01:43:37.177812" level="INFO">Argument types are:
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${expected_final_amount}</arg>
-<arg>24417.91</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-07-24T01:43:37.177772" elapsed="0.000057"/>
-</kw>
-<status status="PASS" start="2024-07-24T01:43:37.177205" elapsed="0.000664"/>
+<status status="FAIL" start="2024-07-26T23:14:51.209827" elapsed="0.000533">No keyword with name 'Create User' found.</status>
 </test>
-<status status="PASS" start="2024-07-24T01:43:37.155186" elapsed="0.022826"/>
+<test id="s1-t4" name="Test Book Reservation" line="19">
+<kw name="Create User">
+<msg time="2024-07-26T23:14:51.210766" level="FAIL">No keyword with name 'Create User' found.</msg>
+<var>${user}</var>
+<arg>John</arg>
+<arg>Doe</arg>
+<arg>12345</arg>
+<status status="FAIL" start="2024-07-26T23:14:51.210757" elapsed="0.000020">No keyword with name 'Create User' found.</status>
+</kw>
+<kw name="Create Book">
+<var>${book}</var>
+<arg>Title</arg>
+<arg>Author</arg>
+<arg>200</arg>
+<arg>123456789</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.210823" elapsed="0.000006"/>
+</kw>
+<kw name="Reserve Book">
+<arg>${user}</arg>
+<arg>${book}</arg>
+<status status="NOT RUN" start="2024-07-26T23:14:51.210869" elapsed="0.000005"/>
+</kw>
+<status status="FAIL" start="2024-07-26T23:14:51.210424" elapsed="0.000495">No keyword with name 'Create User' found.</status>
+</test>
+<status status="FAIL" start="2024-07-26T23:14:51.193922" elapsed="0.017151"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="BankTests">BankTests</stat>
+<stat pass="0" fail="4" skip="0" id="s1" name="BookTests">BookTests</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-07-26T23:14:51.208267" level="ERROR">Error in file '/Users/Mary/Documents/py2024/tests/BookTests.robot' on line 2: Library '../BookUserLibrary.py' does not exist.</msg>
 </errors>
 </robot>
