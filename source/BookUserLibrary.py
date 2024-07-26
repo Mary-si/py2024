@@ -7,6 +7,7 @@ from homework11_library import Book, User
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+
 class BookUserLibrary:
     @staticmethod
     def create_book(title, author, pages, isbn):
