@@ -105,7 +105,7 @@ def test_take_success(book):
     book.is_available = True
     book.is_reserved = False
     result = book.take()
-    assert result == True, "Книга должна быть взята"  # noqa: E712
+    assert result is True, "Книга должна быть взята"  # noqa: E712
     logger.info("Книга успешно взята")
 
 
@@ -115,7 +115,7 @@ def test_take_fail_reserved(book):
     book.is_available = False
     book.is_reserved = True
     result = book.take()
-    assert result == False, "Книга не должна быть взята, тк она зарезервирована"  # noqa: E712
+    assert result is False, "Книга не должна быть взята, тк она зарезервирована"  # noqa: E712
     logger.info("Не удалось взять зарезервированную книгу")
 
 
@@ -125,7 +125,7 @@ def test_take_fail_unavailable(book):
     book.is_available = False
     book.is_reserved = False
     result = book.take()
-    assert result == False, "Книга не должна быть взята, тк она недоступна"  # noqa: E712
+    assert result is False, "Книга не должна быть взята, тк она недоступна"  # noqa: E712
     logger.info("Не удалось взять недоступную книгу")
 
 
@@ -135,9 +135,9 @@ def test_returned(book):
     book.is_available = False
     book.is_reserved = True
     result = book.returned()
-    assert result == True, "Книга должна быть возвращена"  # noqa: E712
-    assert book.is_available == True, "Книга должна быть доступна после возврата"  # noqa: E712
-    assert book.is_reserved == False, \
+    assert result is True, "Книга должна быть возвращена"  # noqa: E712
+    assert book.is_available is True, "Книга должна быть доступна после возврата"  # noqa: E712
+    assert book.is_reserved is False, \
         "Книга не может быть зарезервирована после возврата"  # noqa: E712
     logger.info("Книга успешно возвращена")
 
@@ -148,7 +148,7 @@ def test_reservation_success(book):
     book.is_available = True
     book.is_reserved = False
     result = book.reservation()
-    assert result == True, "Книга должна быть зарезервирована"  # noqa: E712
+    assert result is True, "Книга должна быть зарезервирована"  # noqa: E712
     logger.info("Не удалось зарезервировать книгу")
 
 
