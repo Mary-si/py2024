@@ -1,7 +1,7 @@
 """homework22"""
 
 import logging
-from homework11_library import Book, User
+from .homework11_library import Book, User
 
 """Настройка логгирования"""
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 class BookUserLibrary:
+    """BookUserLibrary"""
     @staticmethod
     def create_book(title, author, pages, isbn):
         """Создает экземпляр книги и возвращает его"""

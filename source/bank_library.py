@@ -1,7 +1,7 @@
 """homework22"""
 
 import logging
-from homework11_bank_deposit import Deposit, Bank
+from .homework11_bank_deposit import Deposit, Bank
 
 """Настройка логгирования"""
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 class BankLibrary:
+    """BankLibrary"""
     @staticmethod
     def create_deposit(deposit_start_date, end_date_deposit):
         """Создает экземпляр депозита и возвращает его"""

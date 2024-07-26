@@ -55,7 +55,7 @@ from unittest import TestCase
 import pytest
 import numpy as np
 
-from homework11_bank_deposit import Deposit, Bank
+from source.homework11_bank_deposit import Deposit, Bank
 
 
 # Добавление пути к модулям
