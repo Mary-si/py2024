@@ -137,7 +137,8 @@ def test_returned(book):
     result = book.returned()
     assert result == True, "Книга должна быть возвращена"  # noqa: E712
     assert book.is_available == True, "Книга должна быть доступна после возврата"  # noqa: E712
-    assert book.is_reserved == False, "Книга не может быть зарезервирована после возврата"  # noqa: E712
+    assert book.is_reserved == False, \
+        "Книга не может быть зарезервирована после возврата"  # noqa: E712
     logger.info("Книга успешно возвращена")
 
 

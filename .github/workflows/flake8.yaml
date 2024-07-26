@@ -40,3 +40,10 @@ jobs:
         run: |
           venv/bin/python -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=myenv,venv
           venv/bin/python -m flake8 . --count --max-complexity=10 --max-line-length=100 --statistics --exclude=myenv,venv
+
+      - name: Verify virtual environment
+        run: |
+          if [ ! -f ./venv/bin/python ]; then
+            echo "Virtual environment not found!"
+            exit 1
+          fi
