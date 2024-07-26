@@ -46,13 +46,18 @@
 # Note2: Названия файлов примерное
 
 
-import pytest
-import re
-from homework11_library import Book, User
 import logging
-import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
+import sys
+import re
+
+import pytest
+
+from homework11_library import Book, User
+
+
+# Добавление пути к модулям
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../source")))
 
 
 # Настройка логирования

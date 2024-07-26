@@ -46,17 +46,20 @@
 # Note2: Названия файлов примерное
 
 
-import pytest
-import numpy as np
 from datetime import datetime
 import logging
-import sys
 import os
+import sys
 from unittest import TestCase
+
+import pytest
+import numpy as np
+
 from homework11_bank_deposit import Deposit, Bank
 
+
 # Добавление пути к модулям
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../source')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../source")))
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s",
@@ -106,7 +109,7 @@ def test_calculate_correctness(bank, almostequal):
     """проверка корректности работы калькулятора"""
     logger.info("Проверка корректности работы калькулятора")
     expected_amount = 10 * (1 + 0.05 / 12) ** (2 * 12)
-    almostequal(bank.calculate(), expected_amount, decimal=2), \
+    assert almostequal(bank.calculate(), expected_amount, decimal=2), \
         "Итоговая сумма депозита рассчитана неверно"
 
 
@@ -114,5 +117,5 @@ def test_calculate_zero_amount(bank, equal):
     """проверка на нулевые значения суммы депозита"""
     logger.info("Проверка на нулевые значения суммы депозита")
     bank.deposit_amount = 0
-    equal(bank.calculate(), 0), \
+    assert equal(bank.calculate(), 0), \
         "Итоговая сумма депозита должна быть 0 при нулевой сумме депозита"
