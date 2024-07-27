@@ -23,6 +23,11 @@ TestResults.xml
 
 # IntelliJ IDEA
 .idea/
+.idea/.DS_Store
+
+# MacOS system files
+.DS_Store
+.github/.DS_Store
 
 # Python cache
 __pycache__/
