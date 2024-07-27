@@ -11,10 +11,10 @@
 # (или которую уже кто-то читает - надо ему про это сказать).
 
 class Book:
-    # атрибуты класса
+    """атрибуты класса"""
     all_book = 0
 
-    # создаем методы класса
+    """создаем методы класса"""
     def __init__(self, title, author, pages, isbn, flag="Available"):
         self.title = title
         self.author = author
@@ -49,7 +49,7 @@ book_3 = Book("Cat", "Leo Rangell", 300,
 
 
 class User:
-    # атрибуты класса
+    """атрибуты класса"""
     all_user = 0
 
     # создаем методы класса
@@ -67,27 +67,24 @@ class User:
         if book.check_status_book():
             self.took_book = book
             book.take()
-            print(f"Пользователь взялл книгу: {self.name}"
-                  f"{self.surname} {self.__id_number}")
+            print(f"Пользователь взял книгу: {self.name} {self.surname} {self.__id_number}")
         else:
-            print(f"Книга взята или зарезервирована пользователем")
+            print("Книга взята или зарезервирована пользователем")
 
     def return_book(self, book):
         """когда вернули книгу"""
         if self.took_book == book:
             book.returned()
-            print(f"Пользователь вернул книгу: {self.name},"
-                  f"{self.surname}, {self.__id_number}")
+            print(f"Пользователь вернул книгу: {self.name} {self.surname} {self.__id_number}")
         else:
-            print(f"У пользователя нет взятых книг")
+            print("У пользователя нет взятых книг")
 
     def reservation_book(self, book):
         """когда зарезервировали книгу"""
         if book.check_status_book():
             self.reservated_book = book
             book.reservation()
-            print(f"Пользователь забронировал книгу: {self.name},"
-                  f"{self.surname}, {self.__id_number}")
+            print(f"Пользователь забронировал книгу: {self.name} {self.surname} {self.__id_number}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)
