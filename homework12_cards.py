@@ -11,7 +11,7 @@
 import random
 
 
-class Card:  # pylint: disable=too-few-public-methods
+class Card:
     """информация о картах"""
     number_list = [2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K", "A", "Joker"]
     mast_list = ["clubs", "diamonds", "hearts", "spades"]

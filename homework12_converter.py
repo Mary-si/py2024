@@ -27,8 +27,7 @@
 from datetime import datetime
 
 
-# pylint: disable=duplicate-code
-class Deposit:  # pylint: disable=too-few-public-methods
+class Deposit:
     """Инфорация депозитов"""
     # создаем методы класса
     def __init__(self, deposit_start_date, end_date_deposit):
@@ -45,7 +44,7 @@ deposit_2 = Deposit("02.03.2022", "02.03.2025")
 deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 
-class Bank:  # pylint: disable=too-few-public-methods
+class Bank:
     """Инфорация о договорах пользователя"""
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
@@ -66,7 +65,7 @@ user_3 = Bank(2000, 1, 0.01)
 # pylint: enable=duplicate-code
 
 
-class Currency:  # pylint: disable=too-few-public-methods
+class Currency:
     """конвертер"""
     EUR = 3.520
     USD = 3.269
