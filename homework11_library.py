@@ -67,7 +67,8 @@ class User:
         if book.check_status_book():
             self.took_book = book
             book.take()
-            print(f"Пользователь взял книгу: {self.name} {self.surname} {self.__id_number}")
+            print(f"Пользователь взял книгу: {self.name} "
+                  f"{self.surname} {self.__id_number}")
         else:
             print("Книга взята или зарезервирована пользователем")
 
@@ -75,7 +76,8 @@ class User:
         """когда вернули книгу"""
         if self.took_book == book:
             book.returned()
-            print(f"Пользователь вернул книгу: {self.name} {self.surname} {self.__id_number}")
+            print(f"Пользователь вернул книгу: {self.name} "
+                  f"{self.surname} {self.__id_number}")
         else:
             print("У пользователя нет взятых книг")
 
@@ -84,7 +86,8 @@ class User:
         if book.check_status_book():
             self.reservated_book = book
             book.reservation()
-            print(f"Пользователь забронировал книгу: {self.name} {self.surname} {self.__id_number}")
+            print(f"Пользователь забронировал книгу: {self.name} "
+                  f"{self.surname} {self.__id_number}")
 
 
 user_1 = User("Mariya", "Simonenko", 1234589)
