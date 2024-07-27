@@ -20,7 +20,7 @@
 
 import unittest
 import re
-from homework11_library import Book, User  # [import-error]
+from homework11_library import Book, User
 
 
 class TestBook(unittest.TestCase):

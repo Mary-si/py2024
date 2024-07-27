@@ -21,7 +21,7 @@
 
 import unittest
 from datetime import datetime
-from homework11_bank_deposit import Deposit, Bank  # [import-error]
+from homework11_bank_deposit import Deposit, Bank
 
 
 class TestDeposit(unittest.TestCase):
