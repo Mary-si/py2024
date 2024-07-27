@@ -53,7 +53,7 @@ import re
 
 import pytest
 
-from source.homework11_library import Book, User
+from homework11_library import Book, User  # [import-error]
 
 
 # Добавление пути к модулям

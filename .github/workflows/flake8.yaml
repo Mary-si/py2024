@@ -22,7 +22,6 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          python -m venv venv
           venv/bin/python -m pip install --upgrade pip
           venv/bin/python -m pip install flake8
 
@@ -47,4 +46,3 @@ jobs:
           if [ ! -f ./venv/bin/python ]; then
             echo "Virtual environment not found!"
             exit 1
-          fi
