@@ -10,21 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v2
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
-
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install mypy
-
-      - name: Create MyPy cache directory
-        run: mkdir -p .mypy_cache
-
       - name: Analysing the code with mypy
         run: |
           mypy --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache --explicit-package-bases .
