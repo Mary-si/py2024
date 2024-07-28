@@ -57,8 +57,8 @@ from source.homework11_library import Book, User
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../source")))
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s",
-                    filename="test_homework21_library_pytest.log")
+logging.basicConfig(level=logging.INFO,
+                    format="%(asctime)s - %(levelname)s - %(message)s", filename="test_homework21_library_pytest.log")
 logger = logging.getLogger(__name__)
 
 
@@ -118,3 +118,77 @@ def test_take_fail_reserved(book):
 def test_take_fail_unavailable(book):
     """проверка взятие книги, когда она недоступна"""
     logger.info("Проверка взятие книги, когда она недоступна")
+    book.is_available = False
+    book.is_reserved = False
+    result = book.take()
+    assert result is False, "Книга не должна быть взята, тк она недоступна"  # noqa: E712
+    logger.info("Не удалось взять недоступную книгу")
+
+
+def test_returned(book):
+    """книга возвращена"""
+    logger.info("Проверка, что книга возвращена")
+    book.is_available = False
+    book.is_reserved = True
+    result = book.returned()
+    assert result is True, "Книга должна быть возвращена"  # noqa: E712
+    assert book.is_available is True, "Книга должна быть доступна после возврата"  # noqa: E712
+    assert book.is_reserved is False, "Книга не может быть зарезервирована после возврата"  # noqa: E712
+    logger.info("Книга успешно возвращена")
+
+
+def test_reservation_success(book):
+    """книга успешно зарезервирована, когда она свободна и не зарезервирована"""
+    logger.info("Проверка, что книга успешно зарезервирована")
+    book.is_available = True
+    book.is_reserved = False
+    result = book.reservation()
+    assert result is True, "Книга должна быть зарезервирована"  # noqa: E712
+    logger.info("Не удалось зарезервировать книгу")
+
+
+def test_reservation_fail_unavailable(book):
+    """Книга не может быть зарезервирована, поскольку она недоступна"""
+    logger.info("Проверка, что книга не может быть зарезервирована, поскольку она недоступна")
+    book.is_available = False
+    result = book.reservation()
+    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
+    logger.info("Не удалось зарезервировать книгу")
+
+
+def test_reservation_fail_reserved(book):
+    """Книга не может быть зарезервирована, поскольку она зарезервирована"""
+    logger.info("Проверка, что книга не может быть зарезервирована, поскольку она зарезервирована")
+    book.is_available = True
+    book.is_reserved = True
+    result = book.reservation()
+    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
+    logger.info("Не удалось зарезервировать книгу")
+
+
+def test_take_book(user, book):
+    """Книга взята пользователем и статус книги изменен"""
+    logger.info("Проверка, что книга взята пользователем и статус книги изменен")
+    book.is_available = True  # Убедимся, что книга доступна
+    user.take_book(book)
+    assert user.took_book == book, "Пользователь должен взять книгу"
+    assert not book.is_available, "Книга должна быть недоступна"
+    logger.info("Книга взята пользователем")
+
+
+def test_return_book(user, book):
+    """Книга возвращена пользователем и статус книги изменен"""
+    logger.info("Проверка, что книга возвращена пользователем и статус книги изменен")
+    user.take_book(book)
+    user.return_book(book)
+    assert user.took_book is None, "Пользователь вернул книгу"
+    assert book.is_available, "Книга доступна после возврата"
+    logger.info("Книга возвращена")
+
+
+def test_book_status(book):
+    """Проверка статуса книги"""
+    logger.info("Проверка статуса книги")
+    assert book.title == "Название книги", "Название книги должно быть корректным"
+    assert book.is_available is True, "Книга должна быть доступна"
+    assert book.is_reserved is False, "Книга не должна быть зарезервирована"
