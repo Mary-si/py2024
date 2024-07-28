@@ -38,9 +38,9 @@ jobs:
         run: |
           if [ ! -f .pylintrc ]; then
             echo "[MASTER]" > .pylintrc
-            echo "ignore-patterns=myenv" >> .pylintrc
+            echo "ignore=__init__.py" >> .pylintrc
             echo "[MESSAGES CONTROL]" >> .pylintrc
-            echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
+            echo "disable=F0010,W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
           fi
 
       - name: Analyse the code with pylint
