@@ -173,7 +173,6 @@ def test_reservation_fail_reserved(book_fixture):
     logger.info("Не удалось зарезервировать книгу")
 
 
-
 def test_take_book(user, book):
     """Книга взята пользователем и статус книги изменен"""
     logger.info("Проверка, что книга взята пользователем и статус книги изменен")
