@@ -41,9 +41,6 @@ jobs:
             echo "ignore-paths=myenv,venv" >> .pylintrc
             echo "[MESSAGES CONTROL]" >> .pylintrc
             echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
-          else
-            # Ensure 'ignore-paths' includes the desired paths if .pylintrc already exists
-            grep -qxF 'ignore-paths=myenv,venv' .pylintrc || echo 'ignore-paths=myenv,venv' >> .pylintrc
           fi
 
       - name: Analyse the code with pylint
