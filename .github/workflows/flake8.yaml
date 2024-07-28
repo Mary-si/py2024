@@ -43,3 +43,4 @@ jobs:
           if [ ! -f $(which python) ]; then
             echo "Python installation not found!"
             exit 1
+          fi  # Добавлено закрытие оператора if
