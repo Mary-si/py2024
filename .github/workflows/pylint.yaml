@@ -48,7 +48,20 @@ jobs:
           source venv/bin/activate
           pylint . --rcfile=.pylintrc
 
-      - name: Run tests
+      - name: Check if there are any tests
+        id: check_tests
         run: |
-          source venv/bin/activate
-          pytest
+          if ls tests/*_test.py 1> /dev/null 2>&1; then
+            echo "::set-output name=has_tests::true"
+          else
+            echo "::set-output name=has_tests::false"
+          fi
+
+      - name: Run tests if available or print a message
+        run: |
+          if [ "${{ steps.check_tests.outputs.has_tests }}" = "true" ]; then
+            source venv/bin/activate
+            pytest tests/
+          else
+            echo "No tests found to run."
+          fi
