@@ -164,19 +164,18 @@ def test_reservation_fail_unavailable(book_fixture):
                 "поскольку она недоступна")
     book_fixture.is_available = False
     result = book_fixture.reservation()
-    assert result == "Книга недоступна для резервирования"
+    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
     logger.info("Не удалось зарезервировать книгу")
 
 
 def test_reservation_fail_reserved(book_fixture):
-    """Книга не может быть зарезервирована,
-    поскольку она зарезервирована"""
+    """Книга не может быть зарезервирована, поскольку она зарезервирована"""
     logger.info("Проверка, что книга не может быть зарезервирована, "
                 "поскольку она зарезервирована")
     book_fixture.is_available = True
     book_fixture.is_reserved = True
     result = book_fixture.reservation()
-    assert result == "Книга уже зарезервирована"
+    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
     logger.info("Не удалось зарезервировать книгу")
 
 
