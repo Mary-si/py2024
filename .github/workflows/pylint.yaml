@@ -19,7 +19,12 @@ jobs:
 
       - name: Check if virtual environment exists
         id: check_venv
-        run: echo "Exists" && test -d venv && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+        run: |
+          if [ -d venv ]; then
+            echo "::set-output name=exists::true"
+          else
+            echo "::set-output name=exists::false"
+          fi
 
       - name: Create virtual environment
         if: steps.check_venv.outputs.exists != 'true'
@@ -38,7 +43,7 @@ jobs:
         run: |
           if [ ! -f .pylintrc ]; then
             echo "[MASTER]" > .pylintrc
-            echo "ignore-paths=venv" >> .pylintrc
+            echo "ignore=venv" >> .pylintrc
             echo "[MESSAGES CONTROL]" >> .pylintrc
             echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
           fi
