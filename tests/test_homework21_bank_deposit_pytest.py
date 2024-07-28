@@ -103,9 +103,9 @@ def test_calculate_correctness(bank, almostequal):
     logger.info("Проверка корректности работы калькулятора")
     expected_amount = 10 * (1 + 0.05 / 12) ** (2 * 12)
     calculated_amount = bank.calculate()
-    logger.info(f"calculated_amount = {calculated_amount}, expected_amount = {expected_amount}")
-    almostequal(calculated_amount, expected_amount, decimal=2), \
-        "Итоговая сумма депозита рассчитана неверно"
+    logger.info("calculated_amount = %f, expected_amount = %f", calculated_amount, expected_amount)
+    almostequal(calculated_amount, expected_amount, decimal=2)
+    assert True, "Итоговая сумма депозита рассчитана неверно"
 
 
 def test_calculate_zero_amount(bank, equal):
@@ -113,6 +113,6 @@ def test_calculate_zero_amount(bank, equal):
     logger.info("Проверка на нулевые значения суммы депозита")
     bank.deposit_amount = 0
     calculated_amount = bank.calculate()
-    logger.info(f"calculated_amount = {calculated_amount}, expected_amount = 0.0")
-    equal(calculated_amount, 0.0), \
-        "Итоговая сумма депозита должна быть 0 при нулевой сумме депозита"
+    logger.info("calculated_amount = %f, expected_amount = 0.0", calculated_amount)
+    equal(calculated_amount, 0.0)
+    assert True, "Итоговая сумма депозита должна быть 0 при нулевой сумме депозита"
