@@ -38,7 +38,7 @@ jobs:
         run: |
           if [ ! -f .pylintrc ]; then
             echo "[MASTER]" > .pylintrc
-            echo "ignore-paths=myenv,venv" >> .pylintrc
+            echo "ignore-paths=venv" >> .pylintrc
             echo "[MESSAGES CONTROL]" >> .pylintrc
             echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
           fi
