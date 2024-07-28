@@ -1,4 +1,4 @@
-name: Pylint
+name: Pylint and Unit Tests
 
 on:
   workflow_dispatch:
@@ -21,17 +21,17 @@ jobs:
         id: check_venv
         run: |
           if [ -d venv ]; then
-            echo "::set-output name=exists::true"
+            echo "exists=true" >> $GITHUB_ENV
           else
-            echo "::set-output name=exists::false"
+            echo "exists=false" >> $GITHUB_ENV
           fi
 
       - name: Create virtual environment
-        if: steps.check_venv.outputs.exists != 'true'
+        if: env.exists != 'true'
         run: python -m venv venv
 
       - name: Activate virtual environment
-        run: source venv/bin/activate && echo "Venv activated"
+        run: source venv/bin/activate
 
       - name: Install dependencies
         run: |
@@ -53,7 +53,12 @@ jobs:
           source venv/bin/activate
           pylint . --rcfile=.pylintrc
 
-      - name: Run tests
+      - name: Run pytest
         run: |
           source venv/bin/activate
           pytest
+
+      - name: Run unittest
+        run: |
+          source venv/bin/activate
+          python -m unittest discover
