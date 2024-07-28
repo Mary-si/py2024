@@ -1,4 +1,4 @@
-name: Pylint
+name: Pylint and Unit Tests
 
 on:
   workflow_dispatch:
@@ -19,14 +19,20 @@ jobs:
 
       - name: Check if virtual environment exists
         id: check_venv
-        run: echo "Exists" && test -d venv && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+        run: |
+          if [ -d venv ]; then
+            echo "exists=true" >> $GITHUB_ENV
+          else
+            echo "exists=false" >> $GITHUB_ENV
+          fi
 
       - name: Create virtual environment
-        if: steps.check_venv.outputs.exists != 'true'
+        if: env.exists != 'true'
         run: python -m venv venv
 
       - name: Activate virtual environment
-        run: source venv/bin/activate && echo "Venv activated"
+        run: |
+          source venv/bin/activate
 
       - name: Install dependencies
         run: |
@@ -38,17 +44,25 @@ jobs:
         run: |
           if [ ! -f .pylintrc ]; then
             echo "[MASTER]" > .pylintrc
-            echo "ignore-patterns=myenv" >> .pylintrc
+            echo "ignore=venv" >> .pylintrc
             echo "[MESSAGES CONTROL]" >> .pylintrc
             echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
           fi
+
+      - name: Set up PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
       - name: Analyse the code with pylint
         run: |
           source venv/bin/activate
           pylint . --rcfile=.pylintrc
 
-      - name: Run tests
+      - name: Run pytest
         run: |
           source venv/bin/activate
           pytest
+
+      - name: Run unittest
+        run: |
+          source venv/bin/activate
+          python -m unittest discover
