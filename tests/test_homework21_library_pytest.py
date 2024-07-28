@@ -120,8 +120,9 @@ def test_take_fail_reserved(book):
     book.is_reserved = True
     result = book.take()
     assert result is False, ("Книга не должна быть взята, "
-                             "тк она зарезервирована")  # noqa: E712
+                             "тк она зарезервирована")
     logger.info("Не удалось взять зарезервированную книгу")
+
 
 
 def test_take_fail_unavailable(book):
