@@ -31,7 +31,8 @@ jobs:
         run: python -m venv venv
 
       - name: Activate virtual environment
-        run: source venv/bin/activate
+        run: |
+          source venv/bin/activate
 
       - name: Install dependencies
         run: |
@@ -47,6 +48,9 @@ jobs:
             echo "[MESSAGES CONTROL]" >> .pylintrc
             echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
           fi
+
+      - name: Set up PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
 
       - name: Analyse the code with pylint
         run: |
