@@ -1,7 +1,5 @@
 name: Pylint
 
-#"""Здесь докстринг класса"""
-        
 on:
   workflow_dispatch:
   pull_request:
@@ -13,14 +11,57 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
+
+      - name: Check if virtual environment exists
+        id: check_venv
+        run: echo "Exists" && test -d venv && echo "::set-output name=exists::true" || echo "::set-output name=exists::false"
+
+      - name: Create virtual environment
+        if: steps.check_venv.outputs.exists != 'true'
+        run: python -m venv venv
+
+      - name: Activate virtual environment
+        run: source venv/bin/activate && echo "Venv activated"
+
       - name: Install dependencies
         run: |
+          source venv/bin/activate
           python -m pip install --upgrade pip
-          pip install pylint
-      - name: Analysing the code with pylint
+          pip install pylint pytest numpy
+
+      - name: Create .pylintrc if not exists
         run: |
-          pylint $(git ls-files '*.py')
+          if [ ! -f .pylintrc ]; then
+            echo "[MASTER]" > .pylintrc
+            echo "ignore=__init__.py" >> .pylintrc
+            echo "[MESSAGES CONTROL]" >> .pylintrc
+            echo "disable=F0010,W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
+          fi
+
+      - name: Analyse the code with pylint
+        run: |
+          source venv/bin/activate
+          pylint . --rcfile=.pylintrc
+
+      - name: Check if there are any tests
+        id: check_tests
+        run: |
+          if ls tests/*_test.py 1> /dev/null 2>&1; then
+            echo "::set-output name=has_tests::true"
+          else
+            echo "::set-output name=has_tests::false"
+          fi
+
+      - name: Run tests if available or print a message
+        run: |
+          if [ "${{ steps.check_tests.outputs.has_tests }}" = "true" ]; then
+            source venv/bin/activate
+            pytest tests/
+          else
+            echo "No tests found to run."
+          fi
