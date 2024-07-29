@@ -1,8 +1,5 @@
 """homework18"""
 
-# tests_homework11_library.py
-
-# pylint: skip-file
 
 # Создайте класс book с именем книги, автором, кол-м страниц, ISBN,
 # флагом, зарезервирована ли книги или нет.
