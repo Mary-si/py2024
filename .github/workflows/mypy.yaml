@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.11
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
       - name: Install Dependencies
@@ -21,4 +21,4 @@ jobs:
           pip install mypy
       - name: Analysing the code with mypy
         run: |
-          mypy --ignore-missing-imports --install-types --non-interactive --exclude venv .
+          mypy --ignore-missing-imports --install-types --non-interactive --cache-dir=.mypy_cache --explicit-package-bases .

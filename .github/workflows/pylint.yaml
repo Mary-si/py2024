@@ -1,7 +1,5 @@
-name: Pylint
+name: Pylint and Unit Tests
 
-#"""Здесь докстринг класса"""
-        
 on:
   workflow_dispatch:
   pull_request:
@@ -13,14 +11,58 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
+
+      - name: Check if virtual environment exists
+        id: check_venv
+        run: |
+          if [ -d venv ]; then
+            echo "exists=true" >> $GITHUB_ENV
+          else
+            echo "exists=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create virtual environment
+        if: env.exists != 'true'
+        run: python -m venv venv
+
+      - name: Activate virtual environment
+        run: |
+          source venv/bin/activate
+
       - name: Install dependencies
         run: |
+          source venv/bin/activate
           python -m pip install --upgrade pip
-          pip install pylint
-      - name: Analysing the code with pylint
+          pip install pylint pytest numpy
+
+      - name: Create .pylintrc if not exists
         run: |
-          pylint $(git ls-files '*.py')
+          if [ ! -f .pylintrc ]; then
+            echo "[MASTER]" > .pylintrc
+            echo "ignore=venv" >> .pylintrc
+            echo "[MESSAGES CONTROL]" >> .pylintrc
+            echo "disable=W0622,too-few-public-methods,W0621,W0105" >> .pylintrc
+          fi
+
+      - name: Set up PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
+
+      - name: Analyse the code with pylint
+        run: |
+          source venv/bin/activate
+          pylint . --rcfile=.pylintrc
+
+      - name: Run pytest
+        run: |
+          source venv/bin/activate
+          pytest
+
+      - name: Run unittest
+        run: |
+          source venv/bin/activate
+          python -m unittest discover
