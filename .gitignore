@@ -31,3 +31,4 @@ TestResults.xml
 
 # Python cache
 __pycache__/
+.idea
