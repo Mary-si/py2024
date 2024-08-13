@@ -23,7 +23,22 @@ TestResults.xml
 
 # IntelliJ IDEA
 .idea/
+.idea/.DS_Store
+
+# MacOS system files
+.DS_Store
+.github/.DS_Store
 
 # Python cache
 __pycache__/
 
+#  Exclude assets folder
+assets/
+
+# Exclude custom virtual environments
+myenv/
+path/to/venv/
+
+# Exclude any existing .DS_Store files in other directories
+**/.DS_Store
+.idea
