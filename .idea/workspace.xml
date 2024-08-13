@@ -58,41 +58,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.claa10.executor": "Run",
-    "Python.class11.executor": "Run",
-    "Python.homework10_ positive_fun_arg.executor": "Run",
-    "Python.homework10_ positive_func_args.executor": "Run",
-    "Python.homework10_1.executor": "Run",
-    "Python.homework10_caching_func.executor": "Run",
-    "Python.homework10_positive_fun_arg.executor": "Run",
-    "Python.homework10_return_number.executor": "Run",
-    "Python.homework10_type_decorator.executor": "Run",
-    "Python.homework11_bank_deposit.executor": "Run",
-    "Python.homework11_library.executor": "Run",
-    "Python.homework12_cards.executor": "Run",
-    "Python.homework12_converter.executor": "Run",
-    "Python.homework12_molecules.executor": "Run",
-    "Python.homework14_calculator.executor": "Run",
-    "Python.homework14_file.executor": "Run",
-    "Python.homework7.executor": "Run",
-    "Python.homework7_bulls_and_cows.executor": "Run",
-    "Python.homework7_pyramid.executor": "Run",
-    "Python.homework7_statues.executor": "Run",
-    "Python.homework8_opposite_number.executor": "Run",
-    "Python.homework8_subsequence.executor": "Run",
-    "Python.homework8_validate.executor": "Run",
-    "Python.homework9_candles.executor": "Run",
-    "Python.homework9_counting_the_number_of_letters.executor": "Run",
-    "Python.homework9_strings_with_character.executor": "Run",
-    "Python.homework9_symbo1.executor": "Run",
-    "Python.homework9_symbol.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/homework11",
-    "last_opened_file_path": "/Users/Mary/Documents/py2024"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.claa10.executor&quot;: &quot;Run&quot;,
+    &quot;Python.class11.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_ positive_fun_arg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_ positive_func_args.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_caching_func.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_positive_fun_arg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_return_number.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework10_type_decorator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework11_bank_deposit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework11_library.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework12_cards.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework12_converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework12_molecules.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework14_calculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework14_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework7.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework7_bulls_and_cows.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework7_pyramid.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework7_statues.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework8_opposite_number.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework8_subsequence.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework8_validate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework9_candles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework9_counting_the_number_of_letters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework9_strings_with_character.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework9_symbo1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.homework9_symbol.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Mary/Documents/py2024&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
