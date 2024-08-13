@@ -32,7 +32,7 @@ deposit_3 = Deposit("01.01.2025", "31.12.2025")
 
 
 class Bank:
-    """Инфорация о договорах пользователя"""
+    """Инфорация о договорах пользователя """
     def __init__(self, deposit_amount, deposit_term_year, percent_deposit):
         self.deposit_amount = deposit_amount
         self.deposit_term_year = deposit_term_year
