@@ -22,3 +22,4 @@ jobs:
       - name: Analysing the code with Ruff
         run: |
           ruff check --output-format=github .
+          
