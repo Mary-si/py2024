@@ -48,7 +48,6 @@
 
 
 import logging
-from unittest import TestCase
 from datetime import datetime
 import numpy as np
 import pytest
@@ -56,64 +55,68 @@ import pytest
 from source.homework11_bank_deposit import Deposit, Bank
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s",
-                    filename="test_homework21_bank_deposit_pytest.log", filemode='w')
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filename="test_homework21_bank_deposit_pytest.log",
+    filemode='w'
+)
 logger = logging.getLogger(__name__)
 
 
 @pytest.fixture
 def deposit():
-    """информация о депозитах"""
+    """Фикстура для депозита"""
     return Deposit("01.02.2020", "01.02.2022")
 
 
 @pytest.fixture
 def bank():
-    """информация о договорах пользователя"""
+    """Фикстура для банка"""
     return Bank(10, 2, 0.05)
 
 
 @pytest.fixture
 def almostequal():
-    """almostequal"""
+    """Фикстура для проверки на почти равенство"""
     return np.testing.assert_almost_equal
 
 
 @pytest.fixture
 def equal():
-    """equal"""
-    return TestCase().assertEqual
+    """Фикстура для проверки на равенство"""
+    return pytest.assert_equal
 
 
 def test_deposit_start_date_is_datetime(deposit):
-    """проверка что deposit_start_date это объект datetime"""
-    logger.info("Проверка что deposit_start_date это объект datetime")
+    """Проверка, что deposit_start_date это объект datetime"""
+    logger.info("Проверка, что deposit_start_date это объект datetime")
     assert isinstance(deposit.deposit_start_date, datetime), \
         "deposit_start_date должен быть объектом datetime"
 
 
 def test_deposit_end_date_is_datetime(deposit):
-    """проверка что deposit_end_date это объект datetime"""
-    logger.info("Проверка что deposit_end_date это объект datetime")
+    """Проверка, что deposit_end_date это объект datetime"""
+    logger.info("Проверка, что deposit_end_date это объект datetime")
     assert isinstance(deposit.end_date_deposit, datetime), \
         "deposit_end_date должен быть объектом datetime"
 
 
 def test_calculate_correctness(bank, almostequal):
-    """проверка корректности работы калькулятора"""
-    logger.info("Проверка корректности работы калькулятора")
+    """Проверка корректности расчета"""
+    logger.info("Проверка корректности расчета")
     expected_amount = 10 * (1 + 0.05 / 12) ** (2 * 12)
     calculated_amount = bank.calculate()
-    logger.info("calculated_amount = %f, expected_amount = %f", calculated_amount, expected_amount)
+    logger.info(f"calculated_amount = {calculated_amount:.2f}, "
+                f"expected_amount = {expected_amount:.2f}")
     almostequal(calculated_amount, expected_amount, decimal=2)
-    assert True, "Итоговая сумма депозита рассчитана неверно"
 
 
 def test_calculate_zero_amount(bank, equal):
-    """проверка на нулевые значения суммы депозита"""
-    logger.info("Проверка на нулевые значения суммы депозита")
+    """Проверка расчета для нулевой суммы депозита"""
+    logger.info("Проверка расчета для нулевой суммы депозита")
     bank.deposit_amount = 0
     calculated_amount = bank.calculate()
-    logger.info("calculated_amount = %f, expected_amount = 0.0", calculated_amount)
+    logger.info(f"calculated_amount = {calculated_amount:.2f}, "
+                f"expected_amount = 0.0")
     equal(calculated_amount, 0.0)
-    assert True, "Итоговая сумма депозита должна быть 0 при нулевой сумме депозита"

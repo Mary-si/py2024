@@ -51,11 +51,10 @@ import os
 import sys
 import re
 import pytest
+from homework11_library import Book, User
 
 # Подключение модулей
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../source")))
-
-from homework11_library import Book, User
 
 # Настройка логирования
 logging.basicConfig(
@@ -68,24 +67,25 @@ logger = logging.getLogger(__name__)
 
 @pytest.fixture
 def book():
-    """book"""
+    """Fixture для книги"""
     return Book("Название книги", "Автор книги", 3000, "111-1-11-111111-1")
 
 
 @pytest.fixture
 def user():
-    """user"""
+    """Fixture для пользователя"""
     return User("Имя", "Фамилия", "1111111")
 
 
 def test_pages_is_integer(book):
-    """проверка, что количество страниц это целое число"""
+    """Проверка, что количество страниц это целое число"""
     logger.info("Проверка, что количество страниц это целое число")
-    assert isinstance(book.pages, int), "Количество страниц должно быть целым числом"
+    assert isinstance(book.pages, int), \
+        "Количество страниц должно быть целым числом"
 
 
 def test_isbn_format(book):
-    """проверка, что ISBN имеет верный формат"""
+    """Проверка, что ISBN имеет верный формат"""
     logger.info("Проверка, что ISBN имеет верный формат")
     pattern = r"^\d{3}-\d-\d{2}-\d{6}-\d$"
     result = re.match(pattern, book.isbn)
@@ -93,14 +93,14 @@ def test_isbn_format(book):
 
 
 def test_isbn_contains_only_digits(book):
-    """проверка, что ISBN содержит только цифры"""
+    """Проверка, что ISBN содержит только цифры"""
     logger.info("Проверка, что ISBN содержит только цифры")
     digits_only = book.isbn.replace("-", "")
     assert digits_only.isdigit(), "ISBN должен содержать только цифры"
 
 
 def test_take_success(book):
-    """проверка, что книга взята"""
+    """Проверка, что книга взята"""
     logger.info("Проверка, что книга взята")
     book.is_available = True
     book.is_reserved = False
@@ -110,18 +110,21 @@ def test_take_success(book):
 
 
 def test_take_fail_reserved(book):
-    """Проверка взятие книги, когда она недоступна, т.е. уже зарезервирована"""
-    logger.info("Проверка взятие книги, когда она недоступна, т.е. уже зарезервирована")
+    """Проверка взятия книги, когда она недоступна,
+    т.е. уже зарезервирована"""
+    logger.info("Проверка взятия книги, когда она недоступна, "
+                "т.е. уже зарезервирована")
     book.is_available = False
     book.is_reserved = True
     result = book.take()
-    assert result is False, "Книга не должна быть взята, тк она зарезервирована"
+    assert result is False, ("Книга не должна быть взята, "
+                             "тк она зарезервирована")
     logger.info("Не удалось взять зарезервированную книгу")
 
 
 def test_take_fail_unavailable(book):
-    """Проверка взятие книги, когда она недоступна"""
-    logger.info("Проверка взятие книги, когда она недоступна")
+    """Проверка взятия книги, когда она недоступна"""
+    logger.info("Проверка взятия книги, когда она недоступна")
     book.is_available = False
     book.is_reserved = False
     result = book.take()
@@ -136,8 +139,10 @@ def test_returned(book):
     book.is_reserved = True
     result = book.returned()
     assert result is True, "Книга должна быть возвращена"
-    assert book.is_available is True, "Книга должна быть доступна после возврата"
-    assert book.is_reserved is False, "Книга не может быть зарезервирована после возврата"
+    assert book.is_available is True, \
+        "Книга должна быть доступна после возврата"
+    assert book.is_reserved is False, \
+        "Книга не может быть зарезервирована после возврата"
     logger.info("Книга успешно возвращена")
 
 
@@ -152,28 +157,36 @@ def test_reservation_success(book):
 
 
 def test_reservation_fail_unavailable(book):
-    """Проверка, что книга не может быть зарезервирована, поскольку она недоступна"""
-    logger.info("Проверка, что книга не может быть зарезервирована, поскольку она недоступна")
+    """Проверка, что книга не может быть зарезервирована,
+    поскольку она недоступна"""
+    logger.info("Проверка, что книга не может быть зарезервирована, "
+                "поскольку она недоступна")
     book.is_available = False
     book.is_reserved = False
     result = book.reservation()
-    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
+    assert result is False, ("Ожидалось, что книга "
+                             "не может быть зарезервирована")
     logger.info("Не удалось зарезервировать книгу")
 
 
 def test_reservation_fail_reserved(book):
-    """Проверка, что книга не может быть зарезервирована, поскольку она зарезервирована"""
-    logger.info("Проверка, что книга не может быть зарезервирована, поскольку она зарезервирована")
+    """Проверка, что книга не может быть зарезервирована,
+    поскольку она зарезервирована"""
+    logger.info("Проверка, что книга не может быть зарезервирована, "
+                "поскольку она зарезервирована")
     book.is_available = True
     book.is_reserved = True
     result = book.reservation()
-    assert result is False, "Ожидалось, что книга не может быть зарезервирована"
+    assert result is False, ("Ожидалось, что книга не "
+                             "может быть зарезервирована")
     logger.info("Не удалось зарезервировать книгу")
 
 
 def test_take_book(user, book):
-    """Проверка, что книга взята пользователем и статус книги изменен"""
-    logger.info("Проверка, что книга взята пользователем и статус книги изменен")
+    """Проверка, что книга взята пользователем и
+    статус книги изменен"""
+    logger.info("Проверка, что книга взята пользователем "
+                "и статус книги изменен")
     book.is_available = True
     user.take_book(book)
     assert user.took_book == book, "Пользователь должен взять книгу"
@@ -182,8 +195,10 @@ def test_take_book(user, book):
 
 
 def test_return_book(user, book):
-    """Проверка, что книга возвращена пользователем и статус книги изменен"""
-    logger.info("Проверка, что книга возвращена пользователем и статус книги изменен")
+    """Проверка, что книга возвращена пользователем и
+    статус книги изменен"""
+    logger.info("Проверка, что книга возвращена "
+                "пользователем и статус книги изменен")
     user.take_book(book)
     user.return_book(book)
     assert user.took_book is None, "Пользователь вернул книгу"
@@ -194,6 +209,7 @@ def test_return_book(user, book):
 def test_book_status(book):
     """Проверка статуса книги"""
     logger.info("Проверка статуса книги")
-    assert book.title == "Название книги", "Название книги должно быть корректным"
+    assert book.title == "Название книги", \
+        "Название книги должно быть корректным"
     assert book.is_available is True, "Книга должна быть доступна"
     assert book.is_reserved is False, "Книга не должна быть зарезервирована"
