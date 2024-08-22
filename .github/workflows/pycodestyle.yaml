@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2  # Updated to use version 2 of setup-python action
         with:
           python-version: 3.11
       - name: Display Python version

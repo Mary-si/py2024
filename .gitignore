@@ -42,3 +42,4 @@ path/to/venv/
 # Exclude any existing .DS_Store files in other directories
 **/.DS_Store
 .idea
+.idea
