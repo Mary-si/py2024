@@ -31,3 +31,15 @@ TestResults.xml
 
 # Python cache
 __pycache__/
+
+#  Exclude assets folder
+assets/
+
+# Exclude custom virtual environments
+myenv/
+path/to/venv/
+
+# Exclude any existing .DS_Store files in other directories
+**/.DS_Store
+.idea
+.idea
