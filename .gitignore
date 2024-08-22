@@ -39,6 +39,9 @@ assets/
 myenv/
 path/to/venv/
 
+# Exclude the venv folder (use this if venv is a local virtual environment folder)
+venv/
+
 # Exclude any existing .DS_Store files in other directories
 **/.DS_Store
 .idea

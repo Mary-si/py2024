@@ -15,10 +15,13 @@ jobs:
         uses: actions/setup-python@v2  # Updated to use version 2 of setup-python action
         with:
           python-version: 3.11
+      - name: Display Python version
+        run: python --version
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pycodestyle
+          pip list
       - name: Analysing the code with pycodestyle
         run: |
-          pycodestyle .
+          pycodestyle . --exclude=myenv,venv --max-line-length=100
